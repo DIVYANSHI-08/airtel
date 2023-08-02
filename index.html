@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Airtel</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="chat.css">
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="airtel_symbol.png" sizes="32x32"/> -->
+	<link rel="icon" type="image/x-icon" href="https://assets.airtel.in/static-assets/new-home/img/favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<script src="https://kit.fontawesome.com/200329ca9b.js" crossorigin="anonymous"></script>
+	<meta property="og:image" content="https://pacman-e281c.firebaseapp.com/img/preview.png">
+	<meta property="og:url" content="https://pacman-e281c.firebaseapp.com/">
+	<meta property="og:description" content="Pac-Man game written in HTML5 + CSS3 + jQuery with Canvas. This WebApp is a Responsive Web Design (RWD) website.">
+	<meta property="og:title" content="Lucio PANEPINTO - Pac-Man">
+		
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="description" content="Pac-Man game written in HTML5 + CSS3 + jQuery with Canvas. This WebApp is a Responsive Web Design (RWD) website." />
+	<meta name="keywords" content="pacman, pac-man, pac-man online, pacman online, online, online games, games, free, puzzle, lucio panepinto, lucio, panepinto, html, html5, css, css3, javascript, jquery, rwd, responsive, responsive web design, responsive web, web design, canvas, draw" />
+
+	<link rel="stylesheet" type="text/css" href="css/pacman.css" />
+	<link rel="stylesheet" type="text/css" href="css/pacman-home.css" />
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-mobile.js"></script>
+	<script type="text/javascript" src="js/jquery-buzz.js"></script>
+		
+	<script type="text/javascript" src="js/game.js"></script>
+	<script type="text/javascript" src="js/tools.js"></script>
+	<script type="text/javascript" src="js/board.js"></script>
+	<script type="text/javascript" src="js/paths.js"></script>
+	<script type="text/javascript" src="js/bubbles.js"></script>
+	<script type="text/javascript" src="js/fruits.js"></script>
+	<script type="text/javascript" src="js/pacman.js"></script>
+	<script type="text/javascript" src="js/ghosts.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+	<script type="text/javascript" src="js/sound.js"></script> 
+		
+</head>
+<body>
+	<!-- <div class="cursor"><img src='airtel_symbol.png' class="cursorlogo"></div>
+	<div class="cursor-blur"></div> -->
+	<!-- chatbot -->
+	<!-- <div class="chat-bar-collapsible">
+		<button id="chat-button" type="button" class="collapsible"><i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i></button>
+		
+		<div class="content">
+			<div class="full-chat-block">
+				
+				<div class="outer-container">
+					<div class="chat-container" >
+						<div id="chatbox">
+							<h5 id="chat-timestamp"></h5>
+							<p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+						</div>
+					
+					<div class="chat-bar-input-block">
+						<div id="userInput">
+							<input id="textInput" class="input-box" type="text" name="msg" placeholder="Tap 'Enter' to send a Message">
+							<p></p>
+						</div>
+						<div class="chat-bar-icons">
+							<i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart" onclick="heartButton()"></i>
+							<i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send" onclick="sendButton()"></i>
+						</div>
+					</div>
+					<div id="chat-bar-bottom">
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div> -->
+	<!-- chatbot end -->
+	<!-- <section>
+		<h2 class="text">g</h2>
+	</section> -->
+	<!-- <div class="leaderboard">
+		<h1>Leaderboard</h1>
+		<ul id="leaderboard-list"></ul>
+	  </div> -->
+	<div id="header">
+		<video autoplay loop muted plays-inline class="back-video" id="back-video">
+				<source src="black_-_13495 (720p).mp4" type="video/mp4">
+		</video>
+		<div class="container">
+			
+			<nav>
+				
+				<img src="airtel.png" class="logo">
+				<!-- <img src="airtel.png" class="logo"> -->
+				
+				
+				
+				<ul id="sidemenu">
+					<!-- <audio controls autoplay loop ><source src="next.ogg" type="audio/mp3"><i class="fa-solid fa-volume"></i></audio> -->
+					<li><a href="#header" id="container">Home</a></li>
+					<li><a href="#services" id="container">Tools</a></li>
+					<li><a href="#contact" id="container">Help </a></li>
+					<li id="hi"><div class="clock">
+						<div class="hour">
+							<div class="hr" id="hr"></div>
+						</div>
+						<div class="min">
+							<div class="mn" id="mn"></div>
+						</div>
+						<a href="#contact" id="container">. </a>
+						<div class="sec">
+							<div class="sc" id="sc">
+				
+							</div>
+						</div>
+					</div></li>
+					<i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+					
+				</ul>
+				
+				<i class="fa-solid fa-bars" onclick="openmenu()"></i>
+			</nav>
+		</div>
+		<div class="container">
+			<nav>
+			
+			<div class="wrapper" >
+				<!-- <p id="leader">Leaderboard</p> -->
+				<div class="lboard_section">
+					<div class="lboard_tabs">
+						<div class="tabs">
+							<ul>
+								<li data-li="today">Today</li>
+								<li class="active" data-li="month">Month</li>
+							</ul>
+						</div>
+					</div>
+			
+					<div class="lboard_wrap">
+						<div class="lboard_item today" style="display: none;">
+							<div class="lboard_mem">
+								<div class="img">
+									<img src="pic_1.png" alt="picture_1">
+								</div>
+								<div class="name_bar">
+									<p><span>1.</span> Charles John</p>
+									<!-- <div class="bar_wrap">
+										<div class="inner_bar" style="width: 95%"></div>
+									</div> -->
+								</div>
+								<div class="points">
+									195 clicks
+								</div>
+							</div>
+							<div class="lboard_mem">
+								<div class="img">
+									<img src="pic_2.png" alt="picture_2">
+								</div>
+								<div class="name_bar">
+									<p><span>2.</span>Alex Mike</p>
+									<!-- <div class="bar_wrap">
+										<div class="inner_bar" style="width: 80%"></div>
+									</div> -->
+								</div>
+								<div class="points">
+									185 clicks
+								</div>
+							</div>
+							<div class="lboard_mem">
+								<div class="img">
+									<img src="pic_3.png" alt="picture_2">
+								</div>
+								<div class="name_bar">
+									<p><span>3.</span>Johnson</p>
+									<!-- <div class="bar_wrap">
+										<div class="inner_bar" style="width: 60%;"></div>
+									</div> -->
+								</div>
+								<div class="points">
+									160 clicks
+								</div>
+							</div>
+						</div>
+						<div class="lboard_item month" style="display: block;">
+							<div class="lboard_mem">
+								<div class="img">
+									<img src="pic_2.png" alt="picture_2">
+								</div>
+								<div class="name_bar">
+									<p><span>1.</span> Alex Mike</p>
+									<!-- <div class="bar_wrap">
+										<div class="inner_bar" style="width: 95%"></div>
+									</div> -->
+								</div>
+								<div class="points">
+									1195 clicks
+								</div>
+							</div>
+							<div class="lboard_mem">
+								<div class="img">
+									<img src="pic_3.png" alt="picture_3">
+								</div>
+								<div class="name_bar">
+									<p><span>2.</span>Johnson</p>
+									<!-- <div class="bar_wrap">
+										<div class="inner_bar" style="width: 80%"></div>
+									</div> -->
+								</div>
+								<div class="points">
+									1185 clicks
+								</div>
+							</div>
+							<div class="lboard_mem">
+								<div class="img">
+									<img src="pic_1.png" alt="picture_1">
+								</div>
+								<div class="name_bar">
+									<p><span>3.</span>Charles John</p>
+									<!-- <div class="bar_wrap">
+										<div class="inner_bar" style="width: 70%;"></div>
+									</div> -->
+								</div>
+								<div class="points">
+									1160 clicks
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+				<!-- pacman -->
+			<ul id="sidemenu">
+				<li>
+			
+			<div class="ht">
+				<div class="bo">
+					<div id="sound"></div>
+			
+					<div id="help">
+			<!-- <h2>Help</h2> -->
+					<table align="center" border="0" cellPadding="2" cellSpacing="0">
+						<tbody>
+							<tr><td>Arrow Left : </td><td>Move Left</td></tr>
+							<tr><td>Arrow Right : </td><td>Move Right</td></tr>
+							<tr><td>Arrow Down : </td><td>Move Down</td></tr>
+							<tr><td>Arrow Up : </td><td>Move Up</td></tr>
+							<tr><td colspan="2">&nbsp;</td></tr>
+							<tr><td>P : </td><td>PAUSE</td></tr>
+						</tbody>
+					</table>
+				</div> 
+
+				<div id="home"> 
+					<!-- <h1>pac-man</h1> -->
+					<!-- <h3>Airtel<br><em>2015</em></h3> -->
+					<canvas id="canvas-home-title-pacman"></canvas>
+					<div id="presentation">
+						<div id="presentation-titles"> &nbsp;&nbsp; </div>
+						<canvas id="canvas-presentation-blinky"></canvas><div id="presentation-character-blinky"></div><div id="presentation-name-blinky"></div>
+						<canvas id="canvas-presentation-pinky"></canvas><div id="presentation-character-pinky"></div><div id="presentation-name-pinky"></div>
+						<canvas id="canvas-presentation-inky"></canvas><div id="presentation-character-inky"></div><div id="presentation-name-inky"></div>
+						<canvas id="canvas-presentation-clyde"></canvas><div id="presentation-character-clyde"></div><div id="presentation-name-clyde"></div>
+					</div>
+					<canvas id="trailer"></canvas>
+					<div class="help-button">- help -</div>
+					<!-- <a class="sound" href="javascript:void(0);" data-sound="on"><img src="img/sound-on.png" alt="" border="0"></a>
+					<a class="github" target="_blank" href="https://github.com/luciopanepinto/pacman"><img src="img/github.png" alt="GitHub - Lucio PANEPINTO - Pac-Man"></a>
+					<a class="putchu" target="_top" href="http://www.putchu.be"><img src="http://www.putchu.be/img/intro/player.png" height="95px" alt="Putchu">www.putchu.be</a> -->
+				</div>
+			
+				<div id="panel">
+					<!-- <h1>pac-man</h1> -->
+					<!-- <a class="putchu" target="_top" href="http://www.putchu.be"><img src="http://www.putchu.be/img/intro/player.png" height="65px" alt="Putchu">www.putchu.be</a> -->
+					<canvas id="canvas-panel-title-pacman"></canvas>
+					<div id="score"><h2>1UP</h2><span>00</span></div>
+					<div id="highscore"><h2>High Score</h2><span>00</span></div>
+					<div id="board">
+						<canvas id="canvas-board"></canvas>
+						<canvas id="canvas-paths"></canvas>
+						<canvas id="canvas-bubbles"></canvas>
+						<canvas id="canvas-fruits"></canvas>
+						<canvas id="canvas-pacman"></canvas>
+						<canvas id="canvas-ghost-blinky"></canvas>
+						<canvas id="canvas-ghost-pinky"></canvas>
+						<canvas id="canvas-ghost-inky"></canvas>
+						<canvas id="canvas-ghost-clyde"></canvas>
+						<div id="control-up-big"></div>
+						<div id="control-down-big"></div>
+						<div id="control-left-big"></div>
+						<!-- <div id="control-right-big"></div> -->
+					</div>
+					<!-- <div id="control">
+						<div id="control-up"></div>
+						<div id="control-up-second"></div>
+						<div id="control-down"></div> 
+						<div id="control-down-second"></div>
+						<div id="control-left"></div>
+						<div id="control-right"></div>
+					</div> -->
+					<!-- <canvas id="canvas-lifes"></canvas> -->
+					<canvas id="canvas-level-fruits"></canvas>
+					<!-- <div id="message"></div> -->
+					<div class="help-button">- help -</div>
+					<a class="sound" href="javascript:void(0);" data-sound="on"><img src="img/sound-on.png" alt="" border="0"></a>
+				</div>
+			
+			
+			</div>
+		</div>
+		</li>
+		</ul>
+	</nav>
+		<div class="header-text">
+			<p></p>
+			<h1><span>Network</span> Digital Suite</h1>
+		</div>	
+		
+	</div>
+</div>
+	
+	<!-- About -->
+	<!-- clock -->
+	<!-- <div class="clock">
+		<div class="hour">
+			<div class="hr" id="hr"></div>
+		</div>
+		<div class="min">
+			<div class="mn" id="mn"></div>
+		</div>
+		<div class="sec">
+			<div class="sc" id="sc">
+
+			</div>
+		</div>
+	</div> -->
+	<!-- glimpse  -->
+	<!-- cursor effect -->
+	<!-- glimpse -->
+	<div id="myModal" class="modal">
+		<div class="modal-content" >
+		  <span class="close" id="container">&times;</span>
+		  <img class="logoblock" src="glimpse logo.jpg">
+		  <br>
+		  <br>
+		  <h3><span>(Airtel's Analytics and Automation Platform)</span></h3>
+		  <br>
+		  <p>Glimpse is an innovative digital platform which helps resources to view, understand and reimagine data through an intelligent data-centric approach. It also designs innovative solutions for superior business outcomes and helps customer execute effective data-driven strategies.</p>
+		  <a href="https://www.glimpse.airtel.com/" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- netcool -->
+	<div id="myModal1" class="modal">
+		<div class="modal-content" >
+		  <span class="close1" id="container">&times;</span>
+		  <img class="logoblock" src="netcool.jpg">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>Bharti/IBM Netcool is a service level management (SLM) alarms monitoring  system that delivers real-time, centralized alarms monitoring of telecom networks. Netcool Probes are connected with OSS/EMS via NBI interface like Corba,SNMP,API ,kafka etc.
+			Fault information presented by Netcool can be handled according to the needs of organization. For example, it can be passed to helpdesk systems, logged in databases, replicated on remote systems, and used to trigger automatic responses to certain events. Bharti/IBM Netcool can also consolidate information from different domain-limited network management platforms in remote locations. By working with existing management systems and applications, Bharti/IBM Netcool minimizes deployment time and enables employees to use their existing network management skills. Bharti/IBM Netcool tracks alert information in a high-performance, in-memory database, and presents information of interest to specific users through filters and views that can be configured individually. Bharti/IBM Netcool has automation functions that can perform intelligent processing on managed alerts.</p>
+		  <a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- vision -->
+	<div id="myModal2" class="modal">
+		<div class="modal-content" >
+		  <span class="close2" id="container">&times;</span>
+		  <img class="logoblock" src="vision.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p></p>
+		  <a href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- Fact -->
+	<div id="myModal3" class="modal">
+		<div class="modal-content" >
+		  <span class="close3" id="container">&times;</span>
+		  <img class="logoblock" src="vision.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, quod. Animi enim mollitia earum, saepe exercitationem nemo adipisci labore? Officiis?</p>
+		  <a href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- mycom  -->
+	<div id="myModal4" class="modal">
+		<div class="modal-content" >
+		  <span class="close4" id="container">&times;</span>
+		  <img class="logo1" src="mycom.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>MYCOM PrOptima is a Network Performance Management Solution that empowers the network teams to access end to end Performance data across all domains and vendors on a common platform, thereby reducing complexity and proactively enabling them to resolve network problems before they impact quality.
+			Desktop Client of the NIMS PrOptima provides an environment wherein any user can view near real time performance data and carry out analyses by creating table reports, graphs, workspaces and Geographical Information System views. KPIs (Key Performance indicators) are the metrics used by network teams to gauge network performance and these are compared against a set of thresholds to understand the network performance at any given time.
+			</p>
+		  <a href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- Mobinet -->
+	<div id="myModal5" class="modal">
+		<div class="modal-content" >
+		  <span class="close5" id="container">&times;</span>
+		  <img class="logo1" src="mobinet.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
+		  </p>
+		  <a href="http://10.175.75.38:8080/NEP-Client/" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- ribbon -->
+	<div id="myModal7" class="modal">
+		<div class="modal-content" >
+		  <span class="close7" id="container">&times;</span>
+		  <img class="logo1" src="ribbon.jpg">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
+		  </p>
+		  <a href="http://10.175.75.38:8080/NEP-Client/" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- ribbon login -->
+	<div id="myModal71" class="modal">
+		<div class="modal-content" >
+		  <span class="close71" id="container">&times;</span>
+		  <img class="logo1" src="ribbon.jpg">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <ul id="linkList7">
+            
+          </ul>
+		
+		</div>
+	</div>
+	<!-- Mysure -->
+	<div id="myModal8" class="modal">
+		<div class="modal-content" >
+		  <span class="close8" id="container">&times;</span>
+		  <img class="logo1" src="msure.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
+		  </p>
+		  <a href="https://surecoverage.airtel.com/surecoverage/" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- airtel work  -->
+	<div id="myModal10" class="modal">
+		<div class="modal-content" >
+		  <span class="close10" id="container">&times;</span>
+		  <img class="logo" src="airtel work.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>Airtelwork is automated work force management tool used for assigning Work orders and Tickets to Field engineers for Fault restoration, Preventive maintenance, Planned and optimization activities.</p>
+		  <a href="http://sit.airtelwork.airtelworld.in/" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- groundhog -->
+	<div id="myModal11" class="modal">
+		<div class="modal-content" >
+		  <span class="close11" id="container">&times;</span>
+		  <img class="logo1" src="ground.jpg">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
+		  </p>
+		  <a href="http://10.175.75.38:8080/NEP-Client/" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- groundhog login -->
+	<div id="myModal112" class="modal">
+		<div class="modal-content" >
+		  <span class="close112" id="container">&times;</span>
+		  <img class="logo1" src="ground.jpg">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <ul id="linkList">
+            
+          </ul>
+		
+		</div>
+	</div>
+	<div id="services">
+		<div class="container">
+			<h1 class="sub-title">Tools</h1>
+			<div class="services-list" id="container">
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logoblock" src="glimpse logo 2.png">
+					<!-- <h5><span>(Airtel's Analytics and Automation Platform)</span></h5> -->
+					<!-- <h2>Glimpse</h2> -->
+					<p>Glimpse is an innovative digital platform which helps resources to view, understand and reimagine data through an intelligent data-centric approach.</p>
+					<!-- <button class="expand-btn">Learn More</button> -->
+					<!-- <div id="myModal" class="modal">
+						<div class="modal-content">
+						  <span class="close">&times;</span>
+						  <h2>Popup Content</h2>
+						  <p>This is the content of the popup.</p>
+						</div>
+					  </div> -->
+					<!-- <a class="netcool" href="www.glimpse.airtel.com">Start</a> -->
+					<table>
+						<tr >
+							<td><a href="https://www.glimpse.airtel.com/" class="netcool">Login</a></td>
+							<td><pre>    </pre></td>
+							<td><a class="netcool" id="openModalButton">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo1" src="netcool.jpg">
+					<!-- <h2>Netcool</h2> -->
+					<p>Bharti/IBM Netcool is a service level management (SLM) alarms monitoring  system that delivers real-time, centralized alarms monitoring of telecom networks.</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="netcool">Login</a></td>
+							<td><pre>    </pre></td>
+							<td><a class="netcool" id="openModalButton1">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
+					<img class="logo1" src="vision.png">
+					<!-- <h2>Vision</h2> -->
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton2">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="services-list" id="container">
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<!-- <img class="logo" src="glimpse logo.jpg"> -->
+					<h2>Fact</h2>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" href="https://www.glimpse.airtel.com/" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton3">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con"> 
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo1" src="mycom.png">
+					<!-- <h2>Mycom</h2> -->
+					<p>MYCOM PrOptima is a Network Performance Management Solution that empowers the network teams to access end to end Performance</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton4">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
+					<img class="logo1" src="mobinet.png">
+					<!-- <h2>Mobinet</h2> -->
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" href="http://10.175.75.38:8080/NEP-Client/" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton5">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="services-list" id="container">
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo1" src="ribbon.jpg">
+					<!-- <h2>Ribbon</h2> -->
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div>
+					<table>
+						<tr >
+							<td><a class="netcool" id="openModalButton71">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton7">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo1" src="msure.png">
+					<!-- <h2>mSure Coverage</h2> -->
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" href="https://surecoverage.airtel.com/surecoverage/" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton8">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
+					<!-- <img class="logo" src="glimpse logo.jpg"> -->
+					<h2>Remedy</h2>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div>
+					<table>
+						<tr >
+							<td><a class="netcool" href="www.glimpse.airtel.com" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>	
+			<div class="services-list" id="container">
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo" src="airtel work.png">
+					<!-- <h2>airtel work</h2> -->
+					<p>Airtelwork is automated work force management tool used for assigning Work orders and Tickets to Field engineers for Fault restoration</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" href="http://sit.airtelwork.airtelworld.in/">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton10">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo1" src="ground.jpg">
+					<!-- <h2>mSure Coverage</h2> -->
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" id="openModalButton112">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton11">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div style="background-color:black;">
+					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
+					<!-- <img class="logo" src="glimpse logo.jpg"> -->
+					<!-- <h2>Remedy</h2>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div>
+					<table>
+						<tr >
+							<td><a class="netcool" href="www.glimpse.airtel.com" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton">Learn more</a></td>
+						</tr>
+					</table> -->
+				</div>
+			</div>
+			<a href="#" class="btn" id="container"></a>
+		</div>
+	</div>
+
+
+
+	<!-- MyCom -->
+	<!-- <div id="about">
+		<div class="container">
+			<div class="row">
+				<div class="about-col-1">
+					<img src="airtel.png">
+				</div>
+				<div class="about-col-2">
+					<h1 class="sub-title">MyCom</h1>
+					<p>This is one of the Digitization tool</p>
+					<div class="tab-titles">
+						<p class="tab-links active-link" onclick="opentab('skills')">Access</p>
+						<p class="tab-links" onclick="opentab('experience')">Report</p>
+						<p class="tab-links" onclick="opentab('education')">Suggestions</p>
+					</div>
+					<div class="tab-contents active-tab" id="skills">
+						<ul>
+							<li><span>New login</span><br><b>click here to login</b></li>
+							<li><span>Sign up</span><br><b>click here to sign up</b></li>
+							<li><span>Registered</span><br><b>click here to registered</b></li>
+						</ul>
+					</div>
+					<div class="tab-contents" id="experience">
+						<ul>
+							<li><span>New login</span><br><b>click here to login</b></li>
+							<li><span>Sign up</span><br><b>click here to sign up</b></li>
+							<li><span>Registered</span><br><b>click here to registered</b></li>
+							<li><span>Registered</span><br><b>click here to registered</b></li>
+							
+						</ul>
+					</div>
+					<div class="tab-contents" id="education">
+						<ul>
+							<li><span>New login</span><br><b>click here to login</b></li>
+							<li><span>Sign up</span><br><b>click here to sign up</b></li>
+							<li><span>Registered</span><br><b>click here to registered</b></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+
+	<!-- ------services----- -->
+	<!-- <div id="services">
+		<div class="container">
+			<h1 class="sub-title">Services</h1>
+			<div class="services-list">
+				<div>
+					<i class="fa-solid fa-code"></i>
+					<h2>ABC</h2>
+					<p>Tool refers to the building, creating, and maintaining purpose.</p>
+					<a href="https://www.geeksforgeeks.org/web-development/">Learn more</a>
+				</div>
+				<div>
+					<i class="fa-solid fa-crop-simple"></i>
+					<h2>XYZ</h2>
+					<p>There has been always confusion between designers about the difference between UI and UX design.</p>
+					<a href="https://www.geeksforgeeks.org/ui-vs-ux-design-which-career-option-should-you-choose/">Learn more</a>
+				</div>
+				<div>
+					<i class="fa-brands fa-app-store-ios"></i>
+					<h2>PQR</h2>
+					<p>Internet of Things (IoT) is the networking of physical objects that contain electronics embedded.</p>
+					<a href="https://www.geeksforgeeks.org/introduction-to-internet-of-things-iot-set-1/">Learn more</a>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+
+	<!-- portfolio -->
+	<!-- <div id="Portfolio">
+		<div class="container">
+			<h1 class="sub-title">Airtel News</h1>
+			<div class="work-list">
+				<div class="work">
+					
+					<div id="news-container">
+						
+					</div>
+					<div class="layer">
+						<h3>Glimpse</h3>
+						<p>This is a Glimpse tool containing Airtel website.</p>
+						<a href="https://rishabh3201.github.io/supermarket/"><i class="fa-solid fa-link"></i></a>
+					</div>
+				</div>
+				<div class="work">
+					<img src="airtel.png">
+					<div class="layer">
+						<h3>MyCom </h3>
+						<p>This is Chatbot for AICTE,which can answer your queries on AICTE.</p>
+						<a href="https://rishabh3201.github.io/chatbot/"><i class="fa-solid fa-link"></i></a>
+					</div>
+				</div>
+				<div class="work">
+					<img src="airtel.png">
+					<div class="layer">
+						<h3>Netcool</h3>
+						<p>This is a Netcool Tool for Airtel.</p>
+						<a href="https://rishabh3201.github.io/music.github.io/"><i class="fa-solid fa-link"></i></a>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="btn">See more</a>
+		</div>
+	</div>  -->
+
+	<!-- contact -->
+	<div id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="contact-left">
+					<h1 class="sub-title">Help</h1>
+					<p><i class="fa-sharp fa-solid fa-paper-plane"></i>airtel.com</p>
+					<p><i class="fa-solid fa-phone"></i>8218964361</p>
+					<div class="social-icons">
+						<a href="https://www.facebook.com/AirtelIndia/" id="container"><i class="fa-brands fa-facebook"></i></a>
+						<a href="https://www.instagram.com/airtelindia/" id="container"><i class="fa-brands fa-instagram"></i></a>
+						<a href="https://twitter.com/airtelindia" id="container"><i class="fa-brands fa-linkedin"></i></a>
+					</div>
+					<!-- <a href="#" download class="btn btn2">Download</a> -->
+				</div>
+				<div class="contact-right">
+					<form>
+						<input type="text" id="container" name="name" placeholder="Your name" required>
+						<input type="email"  id="container" name="email" placeholder="Your email" required>
+						<textarea name="Message" id="container" rows="6" placeholder="Your Message"></textarea>
+						<button type="submit" class="btn btn2" id="container">submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>Copyright <i class="fa-regular fa-copyright"></i> Airtel,Made by Airtel Digitization Team</p>
+		</div>
+	</div>
+
+	<script>
+		document.getElementById('back-video').playbackRate=0.5;
+	</script>
+	<script>
+		var tablinks=document.getElementsByClassName("tab-links");
+		var tabcontents=document.getElementsByClassName("tab-contents");
+		function opentab(tabname){
+			for(tablink of tablinks){
+				tablink.classList.remove("active-link");
+			}
+			for(tabcontent of tabcontents){
+				tabcontent.classList.remove("active-tab");
+			}
+			event.currentTarget.classList.add("active-link");
+			document.getElementById(tabname).classList.add("active-tab");
+		}
+
+	</script>
+	<script >
+		var sidemeu=document.getElementById("sidemenu");
+		function openmenu(){
+			sidemeu.style.right = "0";
+		}
+		function closemenu(){
+			sidemeu.style.right = "-200px";
+
+		}
+	</script>
+	<script src="news.js"></script>
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="responses.js">
+		
+	</script>
+	<script src="learnmore.js"></script>
+	<script src="chat.js">
+			
+	</script>
+	<script type="text/javascript">
+		const deg=6;
+		const hr= document.querySelector('#hr');
+		const mn =document.querySelector('#mn');
+		const sc= document.querySelector('#sc');
+		
+		setInterval(()=>{
+			let day = new Date();
+			let hh = day.getHours()*30;
+			let mm = day.getMinutes()*deg;
+			let ss = day.getSeconds()*deg;
+			hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+			mn.style.transform = `rotateZ(${mm}deg)`;
+			sc.style.transform = `rotateZ(${ss}deg)`;
+		})
+	</script>
+	<script>
+		var cursor = document.querySelector('.cursor');
+			var blur = document.querySelector('.cursor-blur');
+		document.addEventListener('mousemove', function(e) {
+  			cursor.style.left = e.clientX - cursor.clientWidth / 2 + 'px';
+  			cursor.style.top = e.clientY - cursor.clientHeight / 2 + 'px';
+  			blur.style.left = e.x-150 + 'px';
+  			blur.style.top = e.y - 150 + 'px';
+			// blur.style.left = e.clientX - cursor.clientWidth / 2 + 'px';
+  			// blur.style.top = e.clientY - cursor.clientHeight / 2 + 'px';
+		});
+		var sel = document.querySelectorAll('#container')
+		sel.forEach(function(elem){
+			elem.addEventListener("mouseenter",function(){
+				cursor.style.scale=1.7
+				
+			})
+		})
+		sel.forEach(function(elem){
+			elem.addEventListener("mouseleave",function(){
+				cursor.style.scale=1
+				
+			})
+		})
+	</script>
+	<script>
+		const leaderboardData = [
+  { name: "John", score: 350 },
+  { name: "Alice", score: 420 },
+  { name: "Bob", score: 280 },
+  { name: "Eve", score: 390 },
+  { name: "Chris", score: 310 }
+];
+
+function displayLeaderboard() {
+  const leaderboardList = document.getElementById('leaderboard-list');
+  leaderboardList.innerHTML = '';
+
+  leaderboardData.sort((a, b) => b.score - a.score);
+
+  leaderboardData.forEach((entry, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score}`;
+    leaderboardList.appendChild(listItem);
+  });
+}
+
+displayLeaderboard();
+
+	</script>
+	<script>
+		var tabs = document.querySelectorAll(".lboard_tabs ul li");
+var today = document.querySelector(".today");
+var month = document.querySelector(".month");
+var year = document.querySelector(".year");
+var items = document.querySelectorAll(".lboard_item");
+
+tabs.forEach(function(tab){
+	tab.addEventListener("click", function(){
+		var currenttab = tab.getAttribute("data-li");
+		
+		tabs.forEach(function(tab){
+			tab.classList.remove("active");
+		})
+
+		tab.classList.add("active");
+
+		items.forEach(function(item){
+			item.style.display = "none";
+		})
+
+		if(currenttab == "today"){
+			today.style.display = "block";
+		}
+		else if(currenttab == "month"){
+			month.style.display = "block";
+		}
+		else{
+			year.style.display = "block";
+		}
+
+	})
+})
+	</script>
+	<!-- pacman -->
+	<script>
+		window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			
+			gtag('config', 'UA-121647007-2');
+	</script>
+	<script>
+		function simulateKeyup(code) { 
+				var e = jQuery.Event("keyup");
+				e.keyCode = code;
+				jQuery('body').trigger(e);
+			}
+			function simulateKeydown(code) { 
+				var e = jQuery.Event("keydown");
+				e.keyCode = code;
+				jQuery('body').trigger(e);
+			}
+			
+			$(document).ready(function() { 
+				//$.mobile.loading().hide();
+				loadAllSound();
+				
+				HELP_TIMER = setInterval('blinkHelp()', HELP_DELAY);
+				
+				initHome();
+				
+				$(".sound").click(function(e) { 
+					e.stopPropagation();
+					
+					var sound = $(this).attr("data-sound");
+					if ( sound === "on" ) { 
+						$(".sound").attr("data-sound", "off");
+						$(".sound").find("img").attr("src", "img/sound-off.png");
+						GROUP_SOUND.mute();
+					} else { 
+						$(".sound").attr("data-sound", "on");
+						$(".sound").find("img").attr("src", "img/sound-on.png");
+						GROUP_SOUND.unmute();
+					}
+				});
+				
+				$(".help-button, #help").click(function(e) { 
+					e.stopPropagation();
+					if (!PACMAN_DEAD && !LOCK && !GAMEOVER) { 
+						if ( $('#help').css("display") === "none") { 
+							$('#help').fadeIn("slow");
+							$(".help-button").hide();
+							if ( $("#panel").css("display") !== "none") { 
+								pauseGame();
+							}
+						} else { 
+							$('#help').fadeOut("slow");
+							$(".help-button").show();
+						}
+					}
+				});
+				
+				$(".github,.putchu").click(function(e) { 
+					e.stopPropagation();
+				});
+				
+				$("#home").on("click touchstart", function(e) { 
+					if ( $('#help').css("display") === "none") { 
+						e.preventDefault();
+						simulateKeydown(13);
+					}
+				});
+				$("#control-up, #control-up-second, #control-up-big").on("mousedown touchstart", function(e) { 
+					e.preventDefault();
+					simulateKeydown(38);
+					simulateKeyup(13);
+				});
+				$("#control-down, #control-down-second, #control-down-big").on("mousedown touchstart", function(e) { 
+					e.preventDefault();
+					simulateKeydown(40);
+					simulateKeyup(13);
+				});
+				$("#control-left, #control-left-big").on("mousedown touchstart", function(e) { 
+					e.preventDefault();
+					simulateKeydown(37);
+					simulateKeyup(13);
+				});
+				$("#control-right, #control-right-big").on("mousedown touchstart", function(e) { 
+					e.preventDefault();
+					simulateKeydown(39);
+					simulateKeyup(13);
+				});
+
+				
+				$("body").keyup(function(e) { 
+					KEYDOWN = false;
+				});
+				
+				$("body").keydown(function(e) { 
+				
+					if (HOME) { 
+						
+						initGame(true);
+						
+					} else { 				
+						//if (!KEYDOWN) { 
+							KEYDOWN = true;
+							if (PACMAN_DEAD && !LOCK) { 
+								erasePacman();
+								resetPacman();
+								drawPacman();
+								
+								eraseGhosts();
+								resetGhosts();
+								drawGhosts();
+								moveGhosts();
+								
+								blinkSuperBubbles();
+								
+							} else if (e.keyCode >= 37 && e.keyCode <= 40 && !PAUSE && !PACMAN_DEAD && !LOCK) { 
+								if ( e.keyCode === 39 ) { 
+									movePacman(1);
+								} else if ( e.keyCode === 40 ) { 
+									movePacman(2);
+								} else if ( e.keyCode === 37 ) { 
+									movePacman(3);
+								} else if ( e.keyCode === 38 ) { 
+									movePacman(4);
+								}
+							} else if (e.keyCode === 68 && !PAUSE) { 
+								// if ( $("#canvas-paths").css("display") === "none" ) { 
+								// 	$("#canvas-paths").show();
+								// } else { 
+								// 	$("#canvas-paths").hide();
+								// }
+							} else if (e.keyCode === 80 && !PACMAN_DEAD && !LOCK) { 
+								if (PAUSE) { 
+									resumeGame();
+								} else { 
+									pauseGame();
+								}
+							} else if (GAMEOVER) { 
+								initHome();
+							}
+						//}
+					}
+				});
+			});
+	</script>
+
+</html>
+
