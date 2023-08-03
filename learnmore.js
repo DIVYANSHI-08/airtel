@@ -164,23 +164,6 @@ window.addEventListener("click", function (event) {
     modal2.style.display = "none";
   }
 });
-// fact 
-const modal3 = document.getElementById("myModal3");
-const openModalButton3 = document.getElementById("openModalButton3");
-const closeSpan3 = document.getElementsByClassName("close3")[0];
-openModalButton3.addEventListener("click", function () {
-  modal3.style.display = "block";
-});
-closeSpan3.addEventListener("click", function () {
-  modal3.style.display = "none";
-});
-window.addEventListener("click", function (event) {
-  if (event.target === modal3) {
-    modal3.style.display = "none";
-  }
-});
-
-
 // ribon
 const modal7 = document.getElementById("myModal7");
 const openModalButton7 = document.getElementById("openModalButton7");
@@ -255,8 +238,6 @@ function displayLinks7() {
 
 displayLinks7();
 
-
-
 // msure 
 const modal8 = document.getElementById("myModal8");
 const openModalButton8 = document.getElementById("openModalButton8");
@@ -272,6 +253,26 @@ window.addEventListener("click", function (event) {
     modal8.style.display = "none";
   }
 });
+
+// fact 
+const modal3 = document.getElementById("myModal3");
+const openModalButton3 = document.getElementById("openModalButton3");
+const closeSpan3 = document.getElementsByClassName("close3")[0];
+openModalButton3.addEventListener("click", function () {
+  modal3.style.display = "block";
+});
+closeSpan3.addEventListener("click", function () {
+  modal3.style.display = "none";
+});
+window.addEventListener("click", function (event) {
+  if (event.target === modal3) {
+    modal3.style.display = "none";
+  }
+});
+
+
+
+
 // airtel work 
 const modal10 = document.getElementById("myModal10");
 const openModalButton10 = document.getElementById("openModalButton10");
