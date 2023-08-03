@@ -87,9 +87,9 @@
 		</video>
 		<div class="container">
 			
-			<nav>
+			<nav class="navbar">
 				
-				<img src="airtel.png" class="logo">
+				<img src="airtel.png" class="logo" style="background-color: transparent;">
 				<!-- <img src="airtel.png" class="logo"> -->
 				
 				
@@ -99,7 +99,7 @@
 					<li><a href="#header" id="container">Home</a></li>
 					<li><a href="#services" id="container">Tools</a></li>
 					<li><a href="#contact" id="container">Help </a></li>
-					<li id="hi"><div class="clock">
+					<li class="hi"><div class="clock">
 						<div class="hour">
 							<div class="hr" id="hr"></div>
 						</div>
@@ -120,108 +120,137 @@
 				<i class="fa-solid fa-bars" onclick="openmenu()"></i>
 			</nav>
 		</div>
+		<br>
+		<br>
 		<div class="container">
 			<nav>
 			
-			<div class="wrapper" >
-				<!-- <p id="leader">Leaderboard</p> -->
-				<div class="lboard_section">
-					<div class="lboard_tabs">
+			<div id="wrapper" >
+				
+				<div id="lboard_section" class="dropdown-container">
+					<!-- <div class="lboard_tabs">
 						<div class="tabs">
 							<ul>
 								<li data-li="today">Today</li>
 								<li class="active" data-li="month">Month</li>
 							</ul>
 						</div>
-					</div>
-			
-					<div class="lboard_wrap">
+					</div> -->
+					<p id="leader" >Leaderboard</p>
+					<br>
+					<div id="lboard_wrap" class="dropdown-content">
 						<div class="lboard_item today" style="display: none;">
 							<div class="lboard_mem">
-								<div class="img">
+								<!-- <div class="img">
 									<img src="pic_1.png" alt="picture_1">
-								</div>
+								</div> -->
 								<div class="name_bar">
 									<p><span>1.</span> Charles John</p>
-									<!-- <div class="bar_wrap">
-										<div class="inner_bar" style="width: 95%"></div>
+								</div>
+								<p>195 clicks</p>
+									<!-- <div class="points">
+										195_clicks
 									</div> -->
-								</div>
-								<div class="points">
-									195 clicks
-								</div>
+								<!-- <table>
+									<tr>
+										<td>
+											<p><span>1.</span> Charles John</p>
+										</td>
+										<td>
+											<pre>       </pre>
+										</td>
+										<td>
+											<p>195 clicks</p>
+											<div class="points">
+												195 clicks
+											</div>
+										</td>
+									</tr>
+								</table> -->
 							</div>
 							<div class="lboard_mem">
-								<div class="img">
+								<!-- <div class="img">
 									<img src="pic_2.png" alt="picture_2">
-								</div>
-								<div class="name_bar">
+								</div> -->
+								<!-- <div class="name_bar">
 									<p><span>2.</span>Alex Mike</p>
-									<!-- <div class="bar_wrap">
+									<div class="bar_wrap">
 										<div class="inner_bar" style="width: 80%"></div>
-									</div> -->
+									</div>
 								</div>
 								<div class="points">
-									185 clicks
+									185_clicks
+								</div> -->
+								<div class="name_bar">
+									<p><span>2.</span> Charles John</p>
 								</div>
+								<p>195 clicks</p>
+								<!-- <table>
+									<tr>
+										<td>
+											<p><span>2.</span> Alex Mike</p>
+										</td>
+										<td>
+											<pre>            </pre>
+										</td>
+										<td>
+											<p>185 clicks</p>
+											<div class="points">
+												185 clicks
+											</div> 
+										</td>
+									</tr>
+								</table> -->
 							</div>
 							<div class="lboard_mem">
-								<div class="img">
-									<img src="pic_3.png" alt="picture_2">
-								</div>
 								<div class="name_bar">
-									<p><span>3.</span>Johnson</p>
-									<!-- <div class="bar_wrap">
-										<div class="inner_bar" style="width: 60%;"></div>
-									</div> -->
+									<p><span>3.</span> Charles John</p>
 								</div>
-								<div class="points">
-									160 clicks
+								<p>195 clicks</p>
+							</div>
+							<div class="lboard_mem">
+								<div class="name_bar">
+									<p><span>4.</span> Charles John</p>
 								</div>
+								<p>195 clicks</p>
+							</div>
+							<div class="lboard_mem">
+								<div class="name_bar">
+									<p><span>5.</span> Charles John</p>
+								</div>
+								<p>195 clicks</p>
 							</div>
 						</div>
 						<div class="lboard_item month" style="display: block;">
 							<div class="lboard_mem">
-								<div class="img">
-									<img src="pic_2.png" alt="picture_2">
-								</div>
 								<div class="name_bar">
-									<p><span>1.</span> Alex Mike</p>
-									<!-- <div class="bar_wrap">
-										<div class="inner_bar" style="width: 95%"></div>
-									</div> -->
+									<p><span>1.</span> Charles John</p>
 								</div>
-								<div class="points">
-									1195 clicks
-								</div>
+								<p>195 clicks</p>
 							</div>
 							<div class="lboard_mem">
-								<div class="img">
-									<img src="pic_3.png" alt="picture_3">
-								</div>
 								<div class="name_bar">
-									<p><span>2.</span>Johnson</p>
-									<!-- <div class="bar_wrap">
-										<div class="inner_bar" style="width: 80%"></div>
-									</div> -->
+									<p><span>2.</span> Charles John</p>
 								</div>
-								<div class="points">
-									1185 clicks
-								</div>
+								<p>195 clicks</p>
 							</div>
 							<div class="lboard_mem">
-								<div class="img">
-									<img src="pic_1.png" alt="picture_1">
-								</div>
 								<div class="name_bar">
-									<p><span>3.</span>Charles John</p>
-									<!-- <div class="bar_wrap">
-										<div class="inner_bar" style="width: 70%;"></div>
-									</div> -->
+									<p><span>3.</span> Charles John</p>
 								</div>
-								<div class="points">
-									1160 clicks
+								<p>195 clicks</p>
+							</div>
+							<div class="lboard_mem">
+								<div class="name_bar">
+									<p><span>4.</span> Charles John</p>
 								</div>
+								<p>195 clicks</p>
+							</div>
+							<div class="lboard_mem">
+								<div class="name_bar">
+									<p><span>6.</span> Charles John</p>
+								</div>
+								<p>195 clicks</p>
 							</div>
 						</div>
 					</div>
@@ -312,11 +341,12 @@
 		</li>
 		</ul>
 	</nav>
-		<div class="header-text">
-			<p></p>
-			<h1><span>Network</span> Digital Suite</h1>
-		</div>	
+			
 		
+	</div>
+	<div class="header-text">
+		<p></p>
+		<h1><span>Network</span> Digital Suite</h1>
 	</div>
 </div>
 	
@@ -350,6 +380,73 @@
 		  <a href="https://www.glimpse.airtel.com/" class="netcool2" id="container">Login</a>
 		</div>
 	</div>
+	<!-- mycom -->
+	<div id="myModal4" class="modal">
+		<div class="modal-content" >
+		  <span class="close4" id="container">&times;</span>
+		  <img class="logo1" src="mycom3.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>MYCOM PrOptima is a Network Performance Management Solution that empowers the network teams to access end to end Performance data across all domains and vendors on a common platform, thereby reducing complexity and proactively enabling them to resolve network problems before they impact quality.
+			Desktop Client of the NIMS PrOptima provides an environment wherein any user can view near real time performance data and carry out analyses by creating table reports, graphs, workspaces and Geographical Information System views. KPIs (Key Performance indicators) are the metrics used by network teams to gauge network performance and these are compared against a set of thresholds to understand the network performance at any given time.
+			</p>
+		  <a href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- groundhog -->
+	<!-- groundhog -->
+	<div id="myModal11" class="modal">
+		<div class="modal-content" >
+		  <span class="close11" id="container">&times;</span>
+		  <img class="logo1" src="groundhog1.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>
+			Groundhog  System empowers airtel users  for  network service quality analytic with subscriber mobility intelligence by UE geolocation  in  LTE and NR.
+			<ol>
+				<li>
+					<b>Effective Troubleshooting:-</b>Groundhog  system supports in troubleshooting network and subscriber issues involving geo-locations, radio environments, and network signaling from multiple dimensional perspectives.
+				</li>
+				<li>
+					<b>Cost-saving Methodology:-</b>Groundhog  significantly reduces the number of drive tests and walk tests that an operator needs to perform, call trace functionality allows user to trace any call using subscriber id (IMSI) filter.
+				</li>
+				<li>
+					<b>User-perceived QoS Improvement:-</b>Groundhog  system provide KPIs like Protocol analysis with radio link sync failure and data throughput KPIs for QoS improvement.
+				</li>
+				<li>
+					It allows calls to be <b>geo locate outdoor & indoor</b> , for user level network analytic.
+				</li>
+				<li>
+					<b>Networks Layer 3 events</b> information from call trace data.
+				</li>
+				<li>
+					<b>Subscriber based reports</b> & Network coverage KPIs heat maps.
+				</li>
+			</ol>
+		  </p>
+		  
+		  <!-- <a class="netcool2" id="openModalButton112">Login</a> -->
+		</div>
+	</div>
+	<!-- groundhog login -->
+	<div id="myModal112" class="modal">
+		<div class="modal-content" >
+		  <span class="close112" id="container">&times;</span>
+		  <img class="logo1" src="groundhog1.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <ul id="linkList">
+            
+          </ul>
+		
+		</div>
+	</div>
 	<!-- netcool -->
 	<div id="myModal1" class="modal">
 		<div class="modal-content" >
@@ -362,6 +459,19 @@
 		  <p>Bharti/IBM Netcool is a service level management (SLM) alarms monitoring  system that delivers real-time, centralized alarms monitoring of telecom networks. Netcool Probes are connected with OSS/EMS via NBI interface like Corba,SNMP,API ,kafka etc.
 			Fault information presented by Netcool can be handled according to the needs of organization. For example, it can be passed to helpdesk systems, logged in databases, replicated on remote systems, and used to trigger automatic responses to certain events. Bharti/IBM Netcool can also consolidate information from different domain-limited network management platforms in remote locations. By working with existing management systems and applications, Bharti/IBM Netcool minimizes deployment time and enables employees to use their existing network management skills. Bharti/IBM Netcool tracks alert information in a high-performance, in-memory database, and presents information of interest to specific users through filters and views that can be configured individually. Bharti/IBM Netcool has automation functions that can perform intelligent processing on managed alerts.</p>
 		  <a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="netcool2" id="container">Login</a>
+		</div>
+	</div>
+	<!-- Mobinet -->
+	<div id="myModal5" class="modal">
+		<div class="modal-content" >
+		  <span class="close5" id="container">&times;</span>
+		  <img class="logo1" src="mobinet.png">
+		  <br>
+		  <br>
+		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
+		  <br>
+		  <p>Mobinets is a Inventory platform. It manages for networks insights while providing  real-time configuration view, Inventory database management as well as network troubleshooting for all Network elements like RAN, MW, IWAN, Core, BSC,RNC, MME etc.</p>
+		  <a href="http://10.175.75.38:8080/NEP-Client/" class="netcool2" id="container">Login</a>
 		</div>
 	</div>
 	<!-- vision -->
@@ -390,54 +500,26 @@
 		  <a href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" class="netcool2" id="container">Login</a>
 		</div>
 	</div>
-	<!-- mycom  -->
-	<div id="myModal4" class="modal">
-		<div class="modal-content" >
-		  <span class="close4" id="container">&times;</span>
-		  <img class="logo1" src="mycom.png">
-		  <br>
-		  <br>
-		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
-		  <br>
-		  <p>MYCOM PrOptima is a Network Performance Management Solution that empowers the network teams to access end to end Performance data across all domains and vendors on a common platform, thereby reducing complexity and proactively enabling them to resolve network problems before they impact quality.
-			Desktop Client of the NIMS PrOptima provides an environment wherein any user can view near real time performance data and carry out analyses by creating table reports, graphs, workspaces and Geographical Information System views. KPIs (Key Performance indicators) are the metrics used by network teams to gauge network performance and these are compared against a set of thresholds to understand the network performance at any given time.
-			</p>
-		  <a href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" class="netcool2" id="container">Login</a>
-		</div>
-	</div>
-	<!-- Mobinet -->
-	<div id="myModal5" class="modal">
-		<div class="modal-content" >
-		  <span class="close5" id="container">&times;</span>
-		  <img class="logo1" src="mobinet.png">
-		  <br>
-		  <br>
-		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
-		  <br>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
-		  </p>
-		  <a href="http://10.175.75.38:8080/NEP-Client/" class="netcool2" id="container">Login</a>
-		</div>
-	</div>
+	
 	<!-- ribbon -->
 	<div id="myModal7" class="modal">
 		<div class="modal-content" >
 		  <span class="close7" id="container">&times;</span>
-		  <img class="logo1" src="ribbon.jpg">
+		  <img class="logo1" src="ribbon2.jpg">
 		  <br>
 		  <br>
 		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
 		  <br>
 		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
 		  </p>
-		  <a href="http://10.175.75.38:8080/NEP-Client/" class="netcool2" id="container">Login</a>
+		  <!-- <a href="http://10.175.75.38:8080/NEP-Client/" class="netcool2" id="container">Login</a> -->
 		</div>
 	</div>
 	<!-- ribbon login -->
 	<div id="myModal71" class="modal">
 		<div class="modal-content" >
 		  <span class="close71" id="container">&times;</span>
-		  <img class="logo1" src="ribbon.jpg">
+		  <img class="logo1" src="ribbon2.jpg">
 		  <br>
 		  <br>
 		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
@@ -475,35 +557,7 @@
 		  <a href="http://sit.airtelwork.airtelworld.in/" class="netcool2" id="container">Login</a>
 		</div>
 	</div>
-	<!-- groundhog -->
-	<div id="myModal11" class="modal">
-		<div class="modal-content" >
-		  <span class="close11" id="container">&times;</span>
-		  <img class="logo1" src="ground.jpg">
-		  <br>
-		  <br>
-		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
-		  <br>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
-		  </p>
-		  <a href="http://10.175.75.38:8080/NEP-Client/" class="netcool2" id="container">Login</a>
-		</div>
-	</div>
-	<!-- groundhog login -->
-	<div id="myModal112" class="modal">
-		<div class="modal-content" >
-		  <span class="close112" id="container">&times;</span>
-		  <img class="logo1" src="ground.jpg">
-		  <br>
-		  <br>
-		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
-		  <br>
-		  <ul id="linkList">
-            
-          </ul>
-		
-		</div>
-	</div>
+	
 	<div id="services">
 		<div class="container">
 			<h1 class="sub-title">Tools</h1>
@@ -531,6 +585,41 @@
 						</tr>
 					</table>
 				</div>
+				<div class="con"> 
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo1" src="mycom3.png">
+					<!-- <h2>Mycom</h2> -->
+					<p >MYCOM PrOptima is a Network Performance Management Solution that empowers the network teams to access end to end Performance data across all domains</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton4">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo1" src="groundhog1.png">
+					<!-- <h2>groundhog</h2> -->
+					<p>Groundhog  System empowers airtel users  for  network service quality analytic with subscriber mobility intelligence by UE geolocation  in  LTE and NR.</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" id="openModalButton112">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton11">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+			<div class="services-list" id="container">
 				<div class="con">
 					<!-- <i class="fa-solid fa-crop-simple"></i> -->
 					<img class="logo1" src="netcool.jpg">
@@ -544,6 +633,22 @@
 							<td><a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="netcool">Login</a></td>
 							<td><pre>    </pre></td>
 							<td><a class="netcool" id="openModalButton1">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
+					<img class="logo1" src="mobinet.png">
+					<!-- <h2>Mobinet</h2> -->
+					<p>Mobinets is a Inventory platform. It manages for networks insights while providing  real-time configuration view, Inventory database management</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a class="netcool" href="http://10.175.75.38:8080/NEP-Client/" id="container">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton5">Learn more</a></td>
 						</tr>
 					</table>
 				</div>
@@ -567,57 +672,7 @@
 			<div class="services-list" id="container">
 				<div class="con">
 					<!-- <i class="fa-solid fa-crop-simple"></i> -->
-					<!-- <img class="logo" src="glimpse logo.jpg"> -->
-					<h2>Fact</h2>
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
-					<!-- <div class="expand-content">
-						<p>Additional information goes here...</p>
-					</div> -->
-					<table>
-						<tr >
-							<td><a class="netcool" href="https://www.glimpse.airtel.com/" id="container">Login</a></td>
-							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton3">Learn more</a></td>
-						</tr>
-					</table>
-				</div>
-				<div class="con"> 
-					<!-- <i class="fa-solid fa-crop-simple"></i> -->
-					<img class="logo1" src="mycom.png">
-					<!-- <h2>Mycom</h2> -->
-					<p>MYCOM PrOptima is a Network Performance Management Solution that empowers the network teams to access end to end Performance</p>
-					<!-- <div class="expand-content">
-						<p>Additional information goes here...</p>
-					</div> -->
-					<table>
-						<tr >
-							<td><a class="netcool" href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" id="container">Login</a></td>
-							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton4">Learn more</a></td>
-						</tr>
-					</table>
-				</div>
-				<div class="con">
-					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
-					<img class="logo1" src="mobinet.png">
-					<!-- <h2>Mobinet</h2> -->
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
-					<!-- <div class="expand-content">
-						<p>Additional information goes here...</p>
-					</div> -->
-					<table>
-						<tr >
-							<td><a class="netcool" href="http://10.175.75.38:8080/NEP-Client/" id="container">Login</a></td>
-							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton5">Learn more</a></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-			<div class="services-list" id="container">
-				<div class="con">
-					<!-- <i class="fa-solid fa-crop-simple"></i> -->
-					<img class="logo1" src="ribbon.jpg">
+					<img class="logo1" src="ribbon3.jpg">
 					<!-- <h2>Ribbon</h2> -->
 					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
 					<div class="expand-content">
@@ -664,15 +719,15 @@
 					</table>
 				</div>
 			</div>	
-			<div class="services-list" id="container">
-				<div class="con">
-					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+			<!-- <div class="services-list" id="container"> -->
+				<!-- <div class="con">
+					<i class="fa-solid fa-crop-simple"></i>
 					<img class="logo" src="airtel work.png">
-					<!-- <h2>airtel work</h2> -->
+					<h2>airtel work</h2>
 					<p>Airtelwork is automated work force management tool used for assigning Work orders and Tickets to Field engineers for Fault restoration</p>
-					<!-- <div class="expand-content">
+					<div class="expand-content">
 						<p>Additional information goes here...</p>
-					</div> -->
+					</div>
 					<table>
 						<tr >
 							<td><a class="netcool" href="http://sit.airtelwork.airtelworld.in/">Login</a></td>
@@ -680,27 +735,27 @@
 							<td id="container"><a class="netcool" id="openModalButton10">Learn more</a></td>
 						</tr>
 					</table>
-				</div>
-				<div class="con">
-					<!-- <i class="fa-solid fa-crop-simple"></i> -->
-					<img class="logo1" src="ground.jpg">
-					<!-- <h2>mSure Coverage</h2> -->
+				</div> -->
+				<!-- <div class="con">
+					<i class="fa-solid fa-crop-simple"></i>
+					<img class="logo" src="glimpse logo.jpg">
+					<h2>Fact</h2>
 					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
-					<!-- <div class="expand-content">
+					<div class="expand-content">
 						<p>Additional information goes here...</p>
-					</div> -->
+					</div>
 					<table>
 						<tr >
-							<td><a class="netcool" id="openModalButton112">Login</a></td>
+							<td><a class="netcool" href="https://www.glimpse.airtel.com/" id="container">Login</a></td>
 							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton11">Learn more</a></td>
+							<td id="container"><a class="netcool" id="openModalButton3">Learn more</a></td>
 						</tr>
 					</table>
-				</div>
-				<div style="background-color:black;">
-					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
-					<!-- <img class="logo" src="glimpse logo.jpg"> -->
-					<!-- <h2>Remedy</h2>
+				</div> -->
+				<!-- <div style="background-color:black;">
+					<i class="fa-brands fa-app-store-ios"></i>
+					<img class="logo" src="glimpse logo.jpg">
+					<h2>Remedy</h2>
 					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
 					<div class="expand-content">
 						<p>Additional information goes here...</p>
@@ -711,9 +766,9 @@
 							<td><pre>    </pre></td>
 							<td id="container"><a class="netcool" id="openModalButton">Learn more</a></td>
 						</tr>
-					</table> -->
-				</div>
-			</div>
+					</table>
+				</div> -->
+			<!-- </div> -->
 			<a href="#" class="btn" id="container"></a>
 		</div>
 	</div>
@@ -835,8 +890,8 @@
 			<div class="row">
 				<div class="contact-left">
 					<h1 class="sub-title">Help</h1>
-					<p><i class="fa-sharp fa-solid fa-paper-plane"></i>airtel.com</p>
-					<p><i class="fa-solid fa-phone"></i>8218964361</p>
+					<p><a href="https://www.airtel.com/" id="colo"><i class="fa-sharp fa-solid fa-paper-plane"></i>airtel.com</a> </p>
+					<!-- <p><i class="fa-solid fa-phone"></i>8218964361</p> -->
 					<div class="social-icons">
 						<a href="https://www.facebook.com/AirtelIndia/" id="container"><i class="fa-brands fa-facebook"></i></a>
 						<a href="https://www.instagram.com/airtelindia/" id="container"><i class="fa-brands fa-instagram"></i></a>
@@ -846,9 +901,34 @@
 				</div>
 				<div class="contact-right">
 					<form>
+						<!-- <input type="text" name="name" placeholder="Your name" readonly> -->
+						<h4 class="sub-title"><pre> </pre></h4>
+						<br>
 						<input type="text" id="container" name="name" placeholder="Your name" required>
-						<input type="email"  id="container" name="email" placeholder="Your email" required>
-						<textarea name="Message" id="container" rows="6" placeholder="Your Message"></textarea>
+						<div class="email">
+							<input type="email"  id="container" name="email" class="emaily" placeholder="Your email" required >
+							<input type="email"  id="container" name="email" class="olm" placeholder="Your OLM ID" required>
+						</div>
+						<input type="text" name="tool" list="concern_tool" placeholder="Concern tool" required>
+							<datalist id="concern_tool">
+								<option value="Glimpse"></option>
+								<option value="Mycom"></option>
+								<option value="Groundhog"></option>
+								<option value="Netcool"></option>
+								<option value="Mobinets"></option>
+								<option value="Vision"></option>
+								<option value="Ribbon"></option>
+								<option value="mSure Coverage"></option>
+								<option value="Remedy"></option>
+							</datalist>
+						<input type="text" name="support" list="support" placeholder="Support Category" required>
+							<datalist id="support">
+								<option value="New Access Required"></option>
+								<option value="Applicated Related"></option>
+								<option value="Data Sanity on Tool/Report"></option>
+								<option value="Login issues"></option>
+							</datalist>
+						<textarea name="Message" id="container" rows="3" placeholder="Your Message" required></textarea>
 						<button type="submit" class="btn btn2" id="container">submit</button>
 					</form>
 				</div>
@@ -1143,6 +1223,34 @@ tabs.forEach(function(tab){
 				});
 			});
 	</script>
+	<!-- leaderboard -->
+	<script>
+		const dropdownContainer = document.querySelector(".dropdown-container");
+		const dropdownContent = document.querySelector(".dropdown-content");
+	  
+		dropdownContainer.addEventListener("mouseover", function () {
+		  dropdownContent.style.display = "block";
+		});
+	  
+		dropdownContainer.addEventListener("mouseout", function () {
+		  dropdownContent.style.display = "none";
+		});
+	  </script>
+	  
+	<script>
+	</script>
+	<script>
+		window.addEventListener("scroll", function () {
+		const navbar = document.querySelector(".navbar");
+		const scrollPosition = window.scrollY;
+
+		if (scrollPosition > 100) {
+			navbar.style.backgroundColor = "black"; 
+		} else {
+			navbar.style.backgroundColor = "transparent"; 	
+		}
+		});
+	  </script>
 
 </html>
 
