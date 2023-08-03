@@ -42,6 +42,98 @@ window.addEventListener("click", function (event) {
     modal.style.display = "none";
   }
 });
+// mycom
+const modal4 = document.getElementById("myModal4");
+const openModalButton4 = document.getElementById("openModalButton4");
+const closeSpan4 = document.getElementsByClassName("close4")[0];
+openModalButton4.addEventListener("click", function () {
+  modal4.style.display = "block";
+});
+closeSpan4.addEventListener("click", function () {
+  modal4.style.display = "none";
+});
+window.addEventListener("click", function (event) {
+  if (event.target === modal4) {
+    modal4.style.display = "none";
+  }
+});
+// groundhog
+const modal11 = document.getElementById("myModal11");
+const openModalButton11 = document.getElementById("openModalButton11");
+const closeSpan11 = document.getElementsByClassName("close11")[0];
+openModalButton11.addEventListener("click", function () {
+  modal11.style.display = "block";
+});
+closeSpan11.addEventListener("click", function () {
+  modal11.style.display = "none";
+});
+window.addEventListener("click", function (event) {
+  if (event.target === modal11) {
+    modal11.style.display = "none";
+  }
+});
+
+
+// login buttton groundhog
+const modal112 = document.getElementById("myModal112");
+const openModalButton112 = document.getElementById("openModalButton112");
+const closeSpan112 = document.getElementsByClassName("close112")[0];
+openModalButton112.addEventListener("click", function () {
+  modal112.style.display = "block";
+});
+closeSpan112.addEventListener("click", function () {
+  modal112.style.display = "none";
+});
+window.addEventListener("click", function (event) {
+  if (event.target === modal112) {
+    modal112.style.display = "none";
+  }
+});
+
+
+const links = [
+  { title: "North", url: "https://10.19.163.250:8443/CovMo/" },
+  { title: "West", url: "https://10.55.190.250:8443/CovMo/" },
+  { title: "East", url: "https://10.99.61.250:8443/CovMo/" },
+  { title: "South", url: "https://10.91.114.250:8443/CovMo/" }
+  // Add more links here as needed
+];
+
+const linkList = document.getElementById("linkList");
+
+function createLinkElement(link) {
+  const listItem = document.createElement("li1");
+  const anchor = document.createElement("a");
+  anchor.textContent = link.title;
+  anchor.href = link.url;
+  listItem.appendChild(anchor);
+  return listItem;
+}
+
+function displayLinks() {
+  links.forEach((link) => {
+      const linkElement = createLinkElement(link);
+      linkList.appendChild(linkElement);
+  });
+}
+
+displayLinks();
+// mobinet
+const modal5 = document.getElementById("myModal5");
+const openModalButton5 = document.getElementById("openModalButton5");
+const closeSpan5 = document.getElementsByClassName("close5")[0];
+openModalButton5.addEventListener("click", function () {
+  modal5.style.display = "block";
+});
+closeSpan5.addEventListener("click", function () {
+  modal5.style.display = "none";
+});
+window.addEventListener("click", function (event) {
+  if (event.target === modal5) {
+    modal5.style.display = "none";
+  }
+});
+
 // netcool
 const modal1 = document.getElementById("myModal1");
 const openModalButton1 = document.getElementById("openModalButton1");
@@ -87,36 +179,8 @@ window.addEventListener("click", function (event) {
     modal3.style.display = "none";
   }
 });
-// mycom
-const modal4 = document.getElementById("myModal4");
-const openModalButton4 = document.getElementById("openModalButton4");
-const closeSpan4 = document.getElementsByClassName("close4")[0];
-openModalButton4.addEventListener("click", function () {
-  modal4.style.display = "block";
-});
-closeSpan4.addEventListener("click", function () {
-  modal4.style.display = "none";
-});
-window.addEventListener("click", function (event) {
-  if (event.target === modal4) {
-    modal4.style.display = "none";
-  }
-});
-// mobinet
-const modal5 = document.getElementById("myModal5");
-const openModalButton5 = document.getElementById("openModalButton5");
-const closeSpan5 = document.getElementsByClassName("close5")[0];
-openModalButton5.addEventListener("click", function () {
-  modal5.style.display = "block";
-});
-closeSpan5.addEventListener("click", function () {
-  modal5.style.display = "none";
-});
-window.addEventListener("click", function (event) {
-  if (event.target === modal5) {
-    modal5.style.display = "none";
-  }
-});
+
+
 // ribon
 const modal7 = document.getElementById("myModal7");
 const openModalButton7 = document.getElementById("openModalButton7");
@@ -223,64 +287,3 @@ window.addEventListener("click", function (event) {
     modal10.style.display = "none";
   }
 });
-// groundhog
-const modal11 = document.getElementById("myModal11");
-const openModalButton11 = document.getElementById("openModalButton11");
-const closeSpan11 = document.getElementsByClassName("close11")[0];
-openModalButton11.addEventListener("click", function () {
-  modal11.style.display = "block";
-});
-closeSpan11.addEventListener("click", function () {
-  modal11.style.display = "none";
-});
-window.addEventListener("click", function (event) {
-  if (event.target === modal11) {
-    modal11.style.display = "none";
-  }
-});
-
-
-// login buttton groundhog
-const modal112 = document.getElementById("myModal112");
-const openModalButton112 = document.getElementById("openModalButton112");
-const closeSpan112 = document.getElementsByClassName("close112")[0];
-openModalButton112.addEventListener("click", function () {
-  modal112.style.display = "block";
-});
-closeSpan112.addEventListener("click", function () {
-  modal112.style.display = "none";
-});
-window.addEventListener("click", function (event) {
-  if (event.target === modal112) {
-    modal112.style.display = "none";
-  }
-});
-
-
-const links = [
-  { title: "North", url: "https://10.19.163.250:8443/CovMo/" },
-  { title: "West", url: "https://10.55.190.250:8443/CovMo/" },
-  { title: "East", url: "https://10.99.61.250:8443/CovMo/" },
-  { title: "South", url: "https://10.91.114.250:8443/CovMo/" }
-  // Add more links here as needed
-];
-
-const linkList = document.getElementById("linkList");
-
-function createLinkElement(link) {
-  const listItem = document.createElement("li1");
-  const anchor = document.createElement("a");
-  anchor.textContent = link.title;
-  anchor.href = link.url;
-  listItem.appendChild(anchor);
-  return listItem;
-}
-
-function displayLinks() {
-  links.forEach((link) => {
-      const linkElement = createLinkElement(link);
-      linkList.appendChild(linkElement);
-  });
-}
-
-displayLinks();
