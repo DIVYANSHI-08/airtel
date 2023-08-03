@@ -105,9 +105,9 @@ section .text span{
 
 }
 .clock{
-	/* width: 80px; */
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	/* width: 100px; */
+	height: 80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -184,8 +184,12 @@ section .text span{
 }
 .container{
 	padding: 10px 10%;
-
+	margin-top: 15px;
 }
+
+  
+
+
 nav{
 	display: flex;
 	align-items: center;
@@ -360,6 +364,16 @@ button {
     padding: 20px;
     width: 80%;
   }
+  p.pos_fixed {
+    /* position: fixed; */
+    top: 0;
+    /* right: 0; */
+    /* left: 0; */
+    padding: 1em 0;
+    /* margin: 0; */
+    text-align:left;
+    color: rgb(0, 0, 0);
+}
   
   .close, .close1, .close2, .close3, .close4, .close5, .close7, .close71, .close8, .close10, .close11, .close112 {
     color: #aaa;
@@ -689,6 +703,20 @@ video{
 .contact-right{
 	flex-basis: 60%;
 }
+#colo{
+	color: white;
+	/* background-color: #007bff; */
+}
+.email{
+
+	display: flex;
+}
+.emialy{
+	margin-right: 10px;
+}
+.olm{
+	margin-left: 10px;
+}
 .contact-left p{
 	margin-top: 30px;
 }
@@ -750,8 +778,25 @@ form btn2{
 /*.copyright i{
 	color: #ff004f;
 }*/
-
+/* .temp{
+	padding: 10px 0%;
+	position:fixed;
+   z-index: 9999;
+} */
 /*responsive*/
+.navbar {
+	/* background-color: #333; */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000; 
+	/* background-image: url(video.mp4); */
+	/* background-color: black; */
+  }
+.navbar li a:hover {
+	background-color: #111;
+  }
 nav .fa-solid{
 	display: none;
 }
@@ -820,7 +865,7 @@ nav .fa-solid{
 }
 /* leaderboard */
 
-.wrapper{
+#wrapper{
 	/* align-self: auto; */
 	padding:0px 0px 0px 0px;
 	width: 60px;
@@ -828,10 +873,11 @@ nav .fa-solid{
 }
 #leader{
 	color: white;
-	
+	font-size: 30px;
+
 }
 
-.lboard_section{
+#lboard_section{
 	width: 60px;
 	height: 60px;
 	margin: 100px auto 100;
@@ -842,11 +888,11 @@ nav .fa-solid{
 	border-radius: 5px;
 }
 
-.lboard_section .lboard_tabs ul{
+#lboard_section .lboard_tabs ul{
 	display: flex;
 }
 
-.lboard_section .lboard_tabs ul li{
+#lboard_section .lboard_tabs ul li{
 	margin-right: 50px;
 	font-size: 13px;
 	font-weight: 600;
@@ -854,13 +900,14 @@ nav .fa-solid{
 	cursor: pointer;
 }
 
-.lboard_section .lboard_tabs ul li:hover,
-.lboard_section .lboard_tabs ul li.active{
+#lboard_section .lboard_tabs ul li:hover,
+#lboard_section .lboard_tabs ul li.active{
 	color: #fff;
 }
 
-.lboard_wrap{
+#lboard_wrap{
 	position: absolute;
+	margin-top: 20px;
 	margin-right: 30px;
 	top: 40px;
 	left: 10px;
@@ -870,54 +917,79 @@ nav .fa-solid{
 	border-radius: 5px;
 }
 
-.lboard_wrap .lboard_item{
+#lboard_wrap .lboard_item{
 	padding: 6px;
 }
 
-.lboard_wrap .lboard_mem{
+
+  #leader {
+	cursor: pointer;
+	
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #000000;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-content a {
+	display: block;
+	padding: 12px 16px;
+	text-decoration: none;
+	color: #000000;
+  }
+  
+  .dropdown-content a:hover {
+	background-color: #000000;
+  }
+  
+
+#lboard_wrap .lboard_mem{
 	display: flex;
 	align-items: center;
 	padding: 9px 0;
 	border-bottom: 1px solid transparent;
 }
 
-.lboard_wrap .lboard_mem:first-child{
+#lboard_wrap .lboard_mem:first-child{
 	padding-top: 1;
 }
 
-.lboard_wrap .lboard_mem:last-child{
+#lboard_wrap .lboard_mem:last-child{
 	padding-bottom: 0;
 	border-bottom: 0;
 }
 
-.lboard_wrap .lboard_mem .img{
+#lboard_wrap .lboard_mem .img{
 	width: 50px;
 }
 
-.lboard_wrap .lboard_mem img{
+#lboard_wrap .lboard_mem img{
 	display: block;
 	width: 100%;
 }
 
-.lboard_wrap .lboard_mem .name_bar{
+#lboard_wrap .lboard_mem .name_bar{
 	margin: 0 8px;
 	width: calc(100% - 150px);
 }
 
-.lboard_wrap .lboard_mem .name_bar p{
+#lboard_wrap .lboard_mem .name_bar p{
 	color: #ffffff;
 }
 
-.lboard_wrap .lboard_mem .name_bar p span{
+#lboard_wrap .lboard_mem .name_bar p span{
 	margin-right: 5px;
 }
 
-.lboard_wrap .lboard_mem .points{
+#lboard_wrap .lboard_mem .points{
 	width: 10px;
 	color: #ffffff;
 }
 
-.lboard_wrap .lboard_mem .name_bar .bar_wrap{
+#lboard_wrap .lboard_mem .name_bar .bar_wrap{
 	width: 100px;
 	height: 5px;
 	background: transparent;
@@ -927,7 +999,7 @@ nav .fa-solid{
 	overflow: hidden;
 }
 
-.lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar{
+#lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar{
 	position: absolute;
 	top: 0;
 	left: 0;
