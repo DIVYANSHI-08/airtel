@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="chat.css">
 	<!-- <link rel="shortcut icon" type="image/x-icon" href="airtel_symbol.png" sizes="32x32"/> -->
-	<link rel="icon" type="image/x-icon" href="https://assets.airtel.in/static-assets/new-home/img/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://assets.airtel.in/static-assets/new-home/img/favicon.ico"> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 	<script src="https://kit.fontawesome.com/200329ca9b.js" crossorigin="anonymous"></script>
 	<meta property="og:image" content="https://pacman-e281c.firebaseapp.com/img/preview.png">
@@ -19,8 +19,8 @@
 	<meta name="description" content="Pac-Man game written in HTML5 + CSS3 + jQuery with Canvas. This WebApp is a Responsive Web Design (RWD) website." />
 	<meta name="keywords" content="pacman, pac-man, pac-man online, pacman online, online, online games, games, free, puzzle, lucio panepinto, lucio, panepinto, html, html5, css, css3, javascript, jquery, rwd, responsive, responsive web design, responsive web, web design, canvas, draw" />
 
-	<link rel="stylesheet" type="text/css" href="css/pacman.css" />
-	<link rel="stylesheet" type="text/css" href="css/pacman-home.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="css/pacman.css" />
+	<link rel="stylesheet" type="text/css" href="css/pacman-home.css" /> -->
 	
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery-mobile.js"></script>
@@ -36,8 +36,61 @@
 	<script type="text/javascript" src="js/ghosts.js"></script>
 	<script type="text/javascript" src="js/home.js"></script>
 	<script type="text/javascript" src="js/sound.js"></script> 
-		
+	<script>
+		const API_KEY="1dd1a293f1b9417e8def9d522b4dfb8c";
+		const url = "https://newsapi.org/v2/everything?q=";
+		window.addEventListener('load',()=> fetchNews("airtel"));
+		async function fetchNews(query){
+			const dateObj = new Date();
+
+			const year = dateObj.getFullYear();
+			const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+			const day = String(dateObj.getDate()).padStart(2, '0');
+
+			const date = `from=${year}-${month}-${day}`;
+			const res = await fetch(`${url}${query}&from=${date}&apiKey=${API_KEY}`);
+			const data = await res.json();
+			console.log(data);
+			bindData(data.articles)
+		}
+		function bindData(articles){
+			const cardsContainer = document.getElementById('card-container');
+			const newsCardTemplate = document.getElementById('template-news-card');
+			cardsContainer.innerHTML = '';
+			let i=0
+			articles.forEach(article => {
+				if(!article.urlToImage) return ;
+				if(i==2)
+					return;
+				const cardClone = newsCardTemplate.content.cloneNode(true);
+				fillDataInCard(cardClone, article);
+				cardsContainer.appendChild(cardClone);
+				i++;
+			})
+			function fillDataInCard(cardClone, article){
+				const newsImg = cardClone.querySelector('#news-img');
+
+				const newsTitle = cardClone.querySelector('#news-title');
+
+				const newsSource = cardClone.querySelector('#news-source');
+
+				const newsDesc = cardClone.querySelector('#news-desc');
+
+				newsImg.src = article.urlToImage;
+				newsTitle.innerHTML = article.title;
+				newsDesc.innerHTML = article.description;
+				const date = new Date(article.publishedAt).toLocaleDateString("en-US",{
+					timeZone: "Asia/Jakarta"
+				});
+				newsSource.innerHTML = `${article.source.name} ${date}`;
+				cardClone.firstElementChild.addEventListener('click', () =>{
+					window.open(article.url, "_blank");
+				})
+			}
+		}
+	</script>
 </head>
+
 <body>
 	<!-- <div class="cursor"><img src='airtel_symbol.png' class="cursorlogo"></div>
 	<div class="cursor-blur"></div> -->
@@ -81,7 +134,7 @@
 		<h1>Leaderboard</h1>
 		<ul id="leaderboard-list"></ul>
 	  </div> -->
-	<div id="header">
+	  <div id="header">
 		<video autoplay loop muted plays-inline class="back-video" id="back-video">
 				<source src="black_-_13495 (720p).mp4" type="video/mp4">
 		</video>
@@ -98,7 +151,9 @@
 					<!-- <audio controls autoplay loop ><source src="next.ogg" type="audio/mp3"><i class="fa-solid fa-volume"></i></audio> -->
 					<li><a href="#header" id="container">Home</a></li>
 					<li><a href="#services" id="container">Tools</a></li>
-					<li><a href="#contact" id="container1">Help</a></li>
+					<li><a href="#fun" id="container">Fun</a></li>
+					<li><a href="#contact" id="container">Help</a></li>
+					<li><a href="table.php #ticket" id="container1">Ticket</a></li>
 					<li class="hi"><div class="clock">
 						<div class="hour">
 							<div class="hr" id="hr"></div>
@@ -122,8 +177,27 @@
 		</div>
 		<br>
 		<br>
-		<div class="container">
+		<div class="container2 flex">
 			<nav>
+			<!-- <main>
+				<div class="card-container container2 flex" id="card-container">
+				</div> 
+			</main>
+			<template id="template-news-card">
+				<div class="card-container container2 flex" id="card-container">
+					<div class="card">
+						<div class="card-header">
+							<img src="#" alt="news-image" id="news-img">
+						</div>
+						<div class="card-content">
+							<h6 id="news-title">This is the title</h6>
+							<h6 class="news-source" id="news-source">end data</h6>
+							<p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi doloribus reiciendis quas, animi, repellat sapiente sit saepe atque ad laboriosam unde dolorum laborum, tenetur provident? Sit deleniti molestiae facere natus!</p>
+						</div>
+					</div>
+				</div>
+				
+			</template> -->
 			
 			<!-- <div id="wrapper" >
 				
@@ -226,16 +300,16 @@
 			</div> -->
 			
 				<!-- pacman -->
-			<ul id="sidemenu">
+			<!-- <ul id="sidemenu">
 				<li>
 			
 			<div class="ht">
 				<div class="bo">
 					<div id="sound"></div>
 			
-					<div id="help">
+					<div id="help"> -->
 			<!-- <h2>Help</h2> -->
-					<table align="center" border="0" cellPadding="2" cellSpacing="0">
+					<!-- <table align="center" border="0" cellPadding="2" cellSpacing="0">
 						<tbody>
 							<tr><td>Arrow Left : </td><td>Move Left</td></tr>
 							<tr><td>Arrow Right : </td><td>Move Right</td></tr>
@@ -245,12 +319,12 @@
 							<tr><td>P : </td><td>PAUSE</td></tr>
 						</tbody>
 					</table>
-				</div> 
+				</div>  -->
 
-				<div id="home"> 
+				<!-- <div id="home">  -->
 					<!-- <h1>pac-man</h1> -->
 					<!-- <h3>Airtel<br><em>2015</em></h3> -->
-					<canvas id="canvas-home-title-pacman"></canvas>
+					<!-- <canvas id="canvas-home-title-pacman"></canvas>
 					<div id="presentation">
 						<div id="presentation-titles"> &nbsp;&nbsp; </div>
 						<canvas id="canvas-presentation-blinky"></canvas><div id="presentation-character-blinky"></div><div id="presentation-name-blinky"></div>
@@ -259,16 +333,16 @@
 						<canvas id="canvas-presentation-clyde"></canvas><div id="presentation-character-clyde"></div><div id="presentation-name-clyde"></div>
 					</div>
 					<canvas id="trailer"><	/canvas>
-					<div class="help-button">- help -</div>
+					<div class="help-button">- help -</div> -->
 					<!-- <a class="sound" href="javascript:void(0);" data-sound="on"><img src="img/sound-on.png" alt="" border="0"></a>
 					<a class="github" target="_blank" href="https://github.com/luciopanepinto/pacman"><img src="img/github.png" alt="GitHub - Lucio PANEPINTO - Pac-Man"></a>
 					<a class="putchu" target="_top" href="http://www.putchu.be"><img src="http://www.putchu.be/img/intro/player.png" height="95px" alt="Putchu">www.putchu.be</a> -->
-				</div>
+				<!-- </div> -->
 			
-				<div id="panel">
+				<!-- <div id="panel"> -->
 					<!-- <h1>pac-man</h1> -->
 					<!-- <a class="putchu" target="_top" href="http://www.putchu.be"><img src="http://www.putchu.be/img/intro/player.png" height="65px" alt="Putchu">www.putchu.be</a> -->
-					<canvas id="canvas-panel-title-pacman"></canvas>
+					<!-- <canvas id="canvas-panel-title-pacman"></canvas>
 					<div id="score"><h2>1UP</h2><span>00</span></div>
 					<div id="highscore"><h2>High Score</h2><span>00</span></div>
 					<div id="board">
@@ -283,9 +357,9 @@
 						<canvas id="canvas-ghost-clyde"></canvas>
 						<div id="control-up-big"></div>
 						<div id="control-down-big"></div>
-						<div id="control-left-big"></div>
+						<div id="control-left-big"></div> -->
 						<!-- <div id="control-right-big"></div> -->
-					</div>
+					<!-- </div> -->
 					<!-- <div id="control">
 						<div id="control-up"></div>
 						<div id="control-up-second"></div>
@@ -295,17 +369,17 @@
 						<div id="control-right"></div>
 					</div> -->
 					<!-- <canvas id="canvas-lifes"></canvas> -->
-					<canvas id="canvas-level-fruits"></canvas>
+					<!-- <canvas id="canvas-level-fruits"></canvas> -->
 					<!-- <div id="message"></div> -->
-					<div class="help-button">- help -</div>
+					<!-- <div class="help-button">- help -</div>
 					<a class="sound" href="javascript:void(0);" data-sound="on"><img src="img/sound-on.png" alt="" border="0"></a>
-				</div>
+				</div> -->
 			
 			
-			</div>
+			<!-- </div>
 		</div>
 		</li>
-		</ul>
+		</ul> -->
 	</nav>
 			
 		
@@ -343,7 +417,7 @@
 		  <h4><span>(Airtel's Analytics and Automation Platform)</span></h4>
 		  <!-- <br> -->
 		  <p>Glimpse is an innovative digital platform which helps resources to view, understand and reimagine data through an intelligent data-centric approach. It also designs innovative solutions for superior business outcomes and helps customer execute effective data-driven strategies.</p>
-		  <a href="https://www.glimpse.airtel.com/" class="btn btn2" id="container">Login</a>
+		  <a href="https://www.glimpse.airtel.com/" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	<!-- mycom -->
@@ -355,7 +429,7 @@
 		  <p class="aesehi3">MYCOM PrOptima is a Network Performance Management Solution that empowers the network teams to access end to end Performance data across all domains and vendors on a common platform, thereby reducing complexity and proactively enabling them to resolve network problems before they impact quality.
 			Desktop Client of the NIMS PrOptima provides an environment wherein any user can view near real time performance data and carry out analyses by creating table reports, graphs, workspaces and Geographical Information System views. KPIs (Key Performance indicators) are the metrics used by network teams to gauge network performance and these are compared against a set of thresholds to understand the network performance at any given time.
 			</p>
-		  <a href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" class="btn btn2" id="container">Login</a>
+		  <a href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	<!-- groundhog -->
@@ -407,10 +481,10 @@
 	<div id="myModal1" class="modal">
 		<div class="modal-content" >
 		  <span class="close1" id="container">&times;</span>
-		  <img class="logoblock" src="netcool1.jpg">
+		  <img class="logo3" src="netcool1.png">
 		  <p class="aesehi3">Bharti/IBM Netcool is a service level management (SLM) alarms monitoring  system that delivers real-time, centralized alarms monitoring of telecom networks. Netcool Probes are connected with OSS/EMS via NBI interface like Corba,SNMP,API ,kafka etc.
 			Fault information presented by Netcool can be handled according to the needs of organization. For example, it can be passed to helpdesk systems, logged in databases, replicated on remote systems, and used to trigger automatic responses to certain events. Bharti/IBM Netcool can also consolidate information from different domain-limited network management platforms in remote locations. By working with existing management systems and applications, Bharti/IBM Netcool minimizes deployment time and enables employees to use their existing network management skills. Bharti/IBM Netcool tracks alert information in a high-performance, in-memory database, and presents information of interest to specific users through filters and views that can be configured individually. Bharti/IBM Netcool has automation functions that can perform intelligent processing on managed alerts.</p>
-		  <a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="btn btn2" id="container">Login</a>
+		  <a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	<!-- Mobinet -->
@@ -419,7 +493,7 @@
 		  <span class="close5" id="container">&times;</span>
 		  <img class="logo1" src="mobinet.png">
 		  <p class="aesehi2">Mobinets is a Inventory platform. It manages for networks insights while providing  real-time configuration view, Inventory database management as well as network troubleshooting for all Network elements like RAN, MW, IWAN, Core, BSC,RNC, MME etc.</p>
-		  <a href="http://10.175.75.38:8080/NEP-Client/" class="btn btn2" id="container">Login</a>
+		  <a href="http://10.175.75.38:8080/NEP-Client/" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	<!-- vision -->
@@ -428,7 +502,7 @@
 		  <span class="close2" id="container">&times;</span>
 		  <img class="logoblock" src="vision.png">
 		  <p class="aesehi1"></p>
-		  <a href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" class="btn btn2" id="container">Login</a>
+		  <a href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	<!-- ribbon -->
@@ -438,7 +512,7 @@
 		  <img class="logo1" src="ribbon.svg">
 		  <p class="aesehi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
 		  </p>
-		  <a href="#" class="btn btn2" id="container">Login</a>
+		  <a href="#" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	<!-- ribbon login -->
@@ -459,16 +533,16 @@
 		  <img class="logo1" src="msure.png">
 		  <p class="aesehi1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
 		  </p>
-		  <a href="https://surecoverage.airtel.com/surecoverage/" class="btn btn2" id="container">Login</a>
+		  <a href="https://surecoverage.airtel.com/surecoverage/" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	<!-- Fact -->
 	<div id="myModal3" class="modal">
 		<div class="modal-content" >
 		  <span class="close3" id="container">&times;</span>
-		  <img class="logoblock" src="vision.png">
-		  <p class="aesehi">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, quod. Animi enim mollitia earum, saepe exercitationem nemo adipisci labore? Officiis?</p>
-		  <a href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" class="btn btn2" id="container">Login</a>
+		  <img class="logoblock" src="remedy2.png">
+		  <p class="aesehi1">The Remedy Action Request System, also know as Remedy or ARS, is a client-server trouble ticketing application produced by BMC and used by organizations to track internal problems and customer-reported issues</p>
+		  <a href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	
@@ -485,7 +559,7 @@
 		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
 		  <br>
 		  <p>Airtelwork is automated work force management tool used for assigning Work orders and Tickets to Field engineers for Fault restoration, Preventive maintenance, Planned and optimization activities.</p>
-		  <a href="http://sit.airtelwork.airtelworld.in/" class="btn btn2" id="container">Login</a>
+		  <a href="http://sit.airtelwork.airtelworld.in/" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	
@@ -510,7 +584,7 @@
 					<!-- <a class="netcool" href="www.glimpse.airtel.com">Start</a> -->
 					<table>
 						<tr >
-							<td><a href="https://www.glimpse.airtel.com/" class="netcool">Login</a></td>
+							<td><a href="https://www.glimpse.airtel.com/" class="netcool" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td><a class="netcool" id="openModalButton">Learn more</a></td>
 						</tr>
@@ -526,7 +600,7 @@
 					</div> -->
 					<table>
 						<tr >
-							<td><a class="netcool" href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login">Login</a></td>
+							<td><a class="netcool" href="https://oauth2-pm-upmprod.mycom.airtel.com/eaa-nims-oauth2/login" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td><a class="netcool" id="openModalButton4">Learn more</a></td>
 						</tr>
@@ -542,7 +616,7 @@
 					</div> -->
 					<table>
 						<tr >
-							<td><a class="netcool" id="openModalButton112">Login</a></td>
+							<td><a class="netcool" id="openModalButton112" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td><a class="netcool" id="openModalButton11">Learn more</a></td>
 						</tr>
@@ -553,7 +627,7 @@
 			<div class="services-list" >
 				<div class="con">
 					<!-- <i class="fa-solid fa-crop-simple"></i> -->
-					<img class="logo2" src="netcool1.jpg">
+					<img class="logo3" src="netcool1.png">
 					<!-- <h2>Netcool</h2> -->
 					<p>Bharti/IBM Netcool is a service level management (SLM) alarms monitoring  system that delivers real-time, centralized alarms monitoring of telecom networks.</p>
 					<!-- <div class="expand-content">
@@ -561,7 +635,7 @@
 					</div> -->
 					<table>
 						<tr >
-							<td><a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="netcool">Login</a></td>
+							<td><a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="netcool" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td><a class="netcool" id="openModalButton1">Learn more</a></td>
 						</tr>
@@ -577,7 +651,7 @@
 					</div> -->
 					<table>
 						<tr >
-							<td><a class="netcool" href="http://10.175.75.38:8080/NEP-Client/">Login</a></td>
+							<td><a class="netcool" href="http://10.175.75.38:8080/NEP-Client/" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td><a class="netcool" id="openModalButton5">Learn more</a></td>
 						</tr>
@@ -593,7 +667,7 @@
 					</div> -->
 					<table>
 						<tr >
-							<td><a class="netcool" href="http://10.107.146.104:81/airtel_analytics/pview_selection.php">Login</a></td>
+							<td><a class="netcool" href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td><a class="netcool" id="openModalButton2">Learn more</a></td>
 						</tr>
@@ -611,7 +685,7 @@
 					</div>
 					<table>
 						<tr >
-							<td><a class="netcool" id="openModalButton71">Login</a></td>
+							<td><a class="netcool" id="openModalButton71" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td id="container"><a class="netcool" id="openModalButton7">Learn more</a></td>
 						</tr>
@@ -627,7 +701,7 @@
 					</div> -->
 					<table>
 						<tr >
-							<td><a class="netcool" href="https://surecoverage.airtel.com/surecoverage/">Login</a></td>
+							<td><a class="netcool" href="https://surecoverage.airtel.com/surecoverage/" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td id="container"><a class="netcool" id="openModalButton8">Learn more</a></td>
 						</tr>
@@ -635,17 +709,17 @@
 				</div>
 				<div class="con">
 					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
-					<!-- <img class="logo" src="glimpse logo.jpg"> -->
-					<h2>Remedy</h2>
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
+					<img class="logo1" src="remedy2.png">
+					<!-- <h2>Remedy</h2> -->
+					<p>The Remedy Action Request System, also know as Remedy or ARS, is a client-server trouble ticketing application produced by BMC</p>
 					<div class="expand-content">
 						<p>Additional information goes here...</p>
 					</div>
 					<table>
 						<tr >
-							<td><a class="netcool" href="www.glimpse.airtel.com">Login</a></td>
+							<td><a class="netcool" href="www.glimpse.airtel.com" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton">Learn more</a></td>
+							<td id="container"><a class="netcool" id="openModalButton3">Learn more</a></td>
 						</tr>
 					</table>
 				</div>
@@ -814,31 +888,106 @@
 			<a href="#" class="btn">See more</a>
 		</div>
 	</div>  -->
+	<!-- Fun -->
+	<div id="fun">
+		<div class="container">
+			<div class="sub-title">Fun</div>
+			<div class="card-container container3 flex"  >
+				<div class="card" >
+					<a href="menja.html" target="_blank">
+
+						<div class="card-header">
+							<img src="menja.png" alt="news-image" id="news-img">
+						</div>
+						<div class="card-content" href="menja.html" target="_blank">
+							<p class="netcool1">Menja Game</p>
+							<!-- <h6 class="news-source">Play</h6> -->
+							<!-- <p href="menja.html" class="netcool1" target="_blank">
+								Play
+							</p> -->
+							<!-- <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi doloribus reiciendis quas, animi, repellat sapiente sit saepe atque ad laboriosam unde dolorum laborum, tenetur provident? Sit deleniti molestiae facere natus!</p> -->
+						</div>
+					</a>
+					
+				</div>
+				<div class="card">
+					<a href="bulleye.html" target="_blank">
+						<div class="card-header">
+							<img src="bulleye.png" alt="news-image" id="news-img">
+						</div>
+						<div class="card-content">
+							<p class="netcool1">Bull eye</p>
+							<!-- <h6 class="news-source">Play</h6> -->
+							<!-- <p href="menja.html" class="netcool1" target="_blank">
+								Play
+							</p> -->
+							<!-- <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi doloribus reiciendis quas, animi, repellat sapiente sit saepe atque ad laboriosam unde dolorum laborum, tenetur provident? Sit deleniti molestiae facere natus!</p> -->
+						</div>
+					</a>
+					
+				</div>
+				<div class="card">
+					<a href="bird.html" target="_blank">
+						<div class="card-header">
+							<img src="bird.png" alt="news-image" id="news-img">
+						</div>
+						<div class="card-content">
+							<p class="netcool1">Bird</p>
+							<!-- <h6 class="news-source">Play</h6> -->
+							<!-- <p href="menja.html" class="netcool1" target="_blank">
+								Play
+							</p> -->
+							<!-- <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi doloribus reiciendis quas, animi, repellat sapiente sit saepe atque ad laboriosam unde dolorum laborum, tenetur provident? Sit deleniti molestiae facere natus!</p> -->
+						</div>
+					</a>
+					
+				</div>
+				<div class="card">
+					<a href="pacman.html" target="_blank">
+						<div class="card-header">
+							<img src="pacman.png" alt="news-image" id="news-img">
+						</div>
+						<div class="card-content">
+							<p class="netcool1" >Pacman</p>
+							<!-- <h6 class="news-source">Play</h6> -->
+							<!-- <p href="menja.html" class="netcool1" target="_blank">
+								Play
+							</p> -->
+							<!-- <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi doloribus reiciendis quas, animi, repellat sapiente sit saepe atque ad laboriosam unde dolorum laborum, tenetur provident? Sit deleniti molestiae facere natus!</p> -->
+						</div>
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- contact -->
+	
 	<div id="contact">
 		<div class="container" class="sub-title">
 			<div class="row">
 				<div class="contact-left">
 					<h1 class="sub-title1">Help</h1>
-					<p><a href="https://www.airtel.com/" id="colo"><img src="airtel_symbol.png" class="insta"> airtel.com</a> </p>
+					<p><a href="https://www.airtel.com/" id="colo"><img src="airtel_symbol.png" class="insta" target="_blank"> airtel.com</a> </p>
 					<!-- <p><i class="fa-solid fa-phone"></i>8218964361</p> -->
 					<div class="social-icons">
-						<a href="https://www.facebook.com/AirtelIndia/" id="container"><img src="facebook.jpg" class="face"></a>
-						<a href="https://www.instagram.com/airtelindia/" id="container"><img src="insta.jpg" class="insta"></a>
-						<a href="https://twitter.com/airtelindia" id="container"><img src="twitter.png" class="tw"></a>
+						<a href="https://www.facebook.com/AirtelIndia/" id="container" target="_blank"><img src="facebook.jpg" class="face"></a>
+						<a href="https://www.instagram.com/airtelindia/" id="container" target="_blank"><img src="insta.jpg" class="insta"></a>
+						<a href="https://twitter.com/airtelindia" id="container" target="_blank"><img src="twitter.png" class="tw"></a>
 					</div>
 					<!-- <a href="#" download class="btn btn2">Download</a> -->
 				</div>
+				
 				<div class="contact-right">
-					<form>
+					<form action="" class="myform" method="post" enctype="multipart/form-data">
 						<!-- <input type="text" name="name" placeholder="Your name" readonly> -->
 						<!-- <h4 class="sub-title"><pre> </pre></h4> -->
 						<!-- <br> -->
 						<input type="text" id="container" name="name" placeholder="Your name" required>
 						<div class="email">
 							<input type="email"  id="container" name="email" class="emaily" placeholder="Your email" required >
-							<input type="email"  id="container" name="email" class="olm" placeholder="Your OLM ID" required>
+							<input type="text"  id="container" name="olmid" class="olm" placeholder="Your OLM ID" required>
 						</div>
 						<div class="email">
 							<input type="text" name="tool" list="concern_tool" placeholder="Concern Tool Name" id="container" required>
@@ -853,27 +1002,59 @@
 								<option value="mSure Coverage"></option>
 								<option value="Remedy"></option>
 							</datalist>
-							<input type="text" name="support" list="support" id="container" placeholder="Support Category" required>
+						</div>
+						<input type="text" name="support" list="support" id="container" placeholder="Support Category" required>
 								<datalist id="support">
 									<option value="New Access Required"></option>
 									<option value="Login issues"></option>
 									<option value="Applicated Related Issues"></option>
 									<option value="Data Sanity on Tool/Report"></option>
+									
 								</datalist>
-						</div>
 						
-						<textarea name="Message" id="container" rows="3" placeholder="Detail Descriptions" required></textarea>
-						<input type="file" name="pdf" placeholder="upload pdf" class="file" required>
+						<textarea name="message" id="container" rows="3" placeholder="Detail Descriptions" required></textarea>
+						<!-- <input type="file" name="pdf" placeholder="upload pdf" class="file" required> -->
 						<button type="submit" class="btn btn2">SUBMIT</button>
+                        <div id="result"></div	>
 					</form>
 				</div>
 			</div>
 		</div>
 		<div class="copyright">
-			<p>Copyright <i class="fa-regular fa-copyright"></i> Airtel,Made by Airtel Digitization Team</p>
+			<p>Copyright <img src="copyright.jpg" class="copy"> Airtel,Powered by Airtel Digitization Team</p>
 		</div>
 	</div>
 
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('form').submit(function(event){
+                event.preventDefault();
+                $.ajax({
+                    type: $(this).attr('method'),
+                    data: $('form').serialize(),
+                    success: function(data) {
+                        $('#result').html("Your Request has been successfully registered with Network Digitization team with Request ID –  GLI_00001. Kindly use this Request ID for further communication. Mail has also been sent to respective Digital SPOCs.");
+                        $(".myform")[0].reset();
+                    }
+                });
+            });
+        });
+    </script>
+	<!-- <script>
+		document.addEventListener("DOMContentLoaded", function () {
+    	const form = document.getElementById("myForm");
+    	const submitMessage = document.getElementById("submit-message");
+
+    	form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const responseMessage = "Record inserted successfully";
+        submitMessage.textContent = responseMessage;
+        submitMessage.style.display = "block";
+    });
+});
+
+	</script> -->
 	<script>
 		document.getElementById('back-video').playbackRate=0.5;
 	</script>
