@@ -36,7 +36,7 @@
 	<script type="text/javascript" src="js/ghosts.js"></script>
 	<script type="text/javascript" src="js/home.js"></script>
 	<script type="text/javascript" src="js/sound.js"></script> 
-	<script>
+	<!-- <script>
 		const API_KEY="1dd1a293f1b9417e8def9d522b4dfb8c";
 		const url = "https://newsapi.org/v2/everything?q=";
 		window.addEventListener('load',()=> fetchNews("airtel"));
@@ -88,7 +88,7 @@
 				})
 			}
 		}
-	</script>
+	</script> -->
 </head>
 
 <body>
@@ -487,6 +487,7 @@
 		  <a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
+	
 	<!-- Mobinet -->
 	<div id="myModal5" class="modal">
 		<div class="modal-content" >
@@ -510,8 +511,7 @@
 		<div class="modal-content" >
 		  <span class="close7" id="container">&times;</span>
 		  <img class="logo1" src="ribbon.svg">
-		  <p class="aesehi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis necessitatibus accusamus non iste unde id esse neque ducimus dolorem beatae?
-		  </p>
+		  <p class="aesehi">Ribbon is a probe based analytics solution for improving customer’s VoLTE and VoWiFi experience. With Ribbon Analytics in our network, we are able to monitor the network for KPIs and key trends as well as troubleshoot and alert on QoE issues. This provides many benefits such as end-to-end network visibility, improved operational productivity, and efficiency, faster troubleshooting, service issue identification, and resolution.</p>
 		  <a href="#" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
@@ -526,6 +526,7 @@
 		
 		</div>
 	</div>
+	
 	<!-- Mysure -->
 	<div id="myModal8" class="modal">
 		<div class="modal-content" >
@@ -540,9 +541,9 @@
 	<div id="myModal3" class="modal">
 		<div class="modal-content" >
 		  <span class="close3" id="container">&times;</span>
-		  <img class="logoblock" src="remedy2.png">
-		  <p class="aesehi1">The Remedy Action Request System, also know as Remedy or ARS, is a client-server trouble ticketing application produced by BMC and used by organizations to track internal problems and customer-reported issues</p>
-		  <a href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" class="btn btn2" id="container" target="_blank">Login</a>
+		  <img class="logo" src="fact.png">
+		  <p class="aesehi1">FACT aids field resources to check network insights like Live alarms, Performance stats, Inventory, GIS details, etc at the comfort of a mobile click. MOPs, PM forms, GIS update are other key features of FACT tool.</p>
+		  <a href="#" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	
@@ -555,14 +556,22 @@
 		  <span class="close10" id="container">&times;</span>
 		  <img class="logo" src="airtel work.png">
 		  <br>
-		  <br>
-		  <!-- <h3><span>(Airtel's Analytics and Automation Platform)</span></h3> -->
-		  <br>
-		  <p>Airtelwork is automated work force management tool used for assigning Work orders and Tickets to Field engineers for Fault restoration, Preventive maintenance, Planned and optimization activities.</p>
+		  <p class="aesehi1">Airtelwork is automated work force management tool used for assigning Work orders and Tickets to Field engineers for Fault restoration, Preventive maintenance, Planned and optimization activities.</p>
 		  <a href="http://sit.airtelwork.airtelworld.in/" class="btn btn2" id="container" target="_blank">Login</a>
 		</div>
 	</div>
 	
+	<!-- remedy -->
+	<div id="myModal9" class="modal">
+		<div class="modal-content" >
+		  <span class="close9" id="container">&times;</span>
+		  <img class="logoblock" src="remedy2.png">
+		  <p class="aesehi1">The Remedy Action Request System, also know as Remedy or ARS, is a client-server trouble ticketing application produced by BMC and used by organizations to track internal problems and customer-reported issues</p>
+		  <a href="#" class="btn btn2" id="container" target="_blank">Login</a>
+		</div>
+	</div>
+
+
 	<div id="services">
 		<div class="container">
 			<h1 class="sub-title">Tools</h1>
@@ -626,22 +635,6 @@
 			</div>
 			<div class="services-list" >
 				<div class="con">
-					<!-- <i class="fa-solid fa-crop-simple"></i> -->
-					<img class="logo3" src="netcool1.png">
-					<!-- <h2>Netcool</h2> -->
-					<p>Bharti/IBM Netcool is a service level management (SLM) alarms monitoring  system that delivers real-time, centralized alarms monitoring of telecom networks.</p>
-					<!-- <div class="expand-content">
-						<p>Additional information goes here...</p>
-					</div> -->
-					<table>
-						<tr >
-							<td><a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="netcool" target="_blank">Login</a></td>
-							<td><pre>    </pre></td>
-							<td><a class="netcool" id="openModalButton1">Learn more</a></td>
-						</tr>
-					</table>
-				</div>
-				<div class="con">
 					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
 					<img class="logo1" src="mobinet.png">
 					<!-- <h2>Mobinet</h2> -->
@@ -658,6 +651,76 @@
 					</table>
 				</div>
 				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo1" src="ribbon.svg">
+					<!-- <h2>Ribbon</h2> -->
+					<p>Ribbon is a probe based analytics solution for improving customer’s VoLTE and VoWiFi experience. With Ribbon Analytics in our network</p>
+					<table>
+						<tr >
+							<td><a class="netcool" id="openModalButton71" target="_blank">Login</a></td>
+							<td><pre>    </pre></td>
+							<td id="container"><a class="netcool" id="openModalButton7">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<!-- <i class="fa-solid fa-crop-simple"></i> -->
+					<img class="logo3" src="netcool1.png">
+					<!-- <h2>Netcool</h2> -->
+					<p>Bharti/IBM Netcool is a service level management (SLM) alarms monitoring  system that delivers real-time, centralized alarms monitoring of telecom networks.</p>
+					<!-- <div class="expand-content">
+						<p>Additional information goes here...</p>
+					</div> -->
+					<table>
+						<tr >
+							<td><a href="https://ufm.enoc.airtel.com:16311/ibm/console/logon.jsp" class="netcool" target="_blank">Login</a></td>
+							<td><pre>    </pre></td>
+							<td><a class="netcool" id="openModalButton1">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+			<div class="services-list">
+				<div class="con">
+					<img class="logo1" src="remedy2.png">
+					<p>The Remedy Action Request System, also know as Remedy or ARS, is a client-server trouble ticketing application produced by BMC</p>
+					<table>
+						<tr >
+							<td><a class="netcool" href="" target="_blank">Login</a></td>
+							<td><pre>    </pre></td>
+							<td><a class="netcool" id="openModalButton9">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					<img class="logo" src="airtel work.png">
+					<p>Airtelwork is automated work force management tool used for assigning Work orders and Tickets to Field engineers for Fault restoration</p>
+					<table>
+						<tr >
+							<td><a class="netcool" href="http://sit.airtelwork.airtelworld.in/" target="_blank">Login</a></td>
+							<td><pre>    </pre></td>
+							<td><a class="netcool" id="openModalButton10">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="con">
+					
+					<img class="logo" src="fact.png">
+					<p>FACT aids field resources to check network insights like Live alarms, Performance stats, Inventory, GIS details, etc</p>
+					<table>
+						<tr >
+							<td><a class="netcool" href="#" target="_blank">Login</a></td>
+							<td><pre>    </pre></td>
+							<td><a class="netcool" id="openModalButton3">Learn more</a></td>
+						</tr>
+					</table>
+				</div>
+				
+				
+			</div>	
+			<div class="services-list">
+				<div class="con">
 					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
 					<img class="logo1" src="vision.png">
 					<!-- <h2>Vision</h2> -->
@@ -670,24 +733,6 @@
 							<td><a class="netcool" href="http://10.107.146.104:81/airtel_analytics/pview_selection.php" target="_blank">Login</a></td>
 							<td><pre>    </pre></td>
 							<td><a class="netcool" id="openModalButton2">Learn more</a></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-			<div class="services-list">
-				<div class="con">
-					<!-- <i class="fa-solid fa-crop-simple"></i> -->
-					<img class="logo1" src="ribbon.svg">
-					<!-- <h2>Ribbon</h2> -->
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
-					<div class="expand-content">
-						<p>Additional information goes here...</p>
-					</div>
-					<table>
-						<tr >
-							<td><a class="netcool" id="openModalButton71" target="_blank">Login</a></td>
-							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton7">Learn more</a></td>
 						</tr>
 					</table>
 				</div>
@@ -707,60 +752,11 @@
 						</tr>
 					</table>
 				</div>
-				<div class="con">
-					<!-- <i class="fa-brands fa-app-store-ios"></i> -->
-					<img class="logo1" src="remedy2.png">
-					<!-- <h2>Remedy</h2> -->
-					<p>The Remedy Action Request System, also know as Remedy or ARS, is a client-server trouble ticketing application produced by BMC</p>
-					<div class="expand-content">
-						<p>Additional information goes here...</p>
-					</div>
-					<table>
-						<tr >
-							<td><a class="netcool" href="www.glimpse.airtel.com" target="_blank">Login</a></td>
-							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton3">Learn more</a></td>
-						</tr>
-					</table>
-				</div>
-			</div>	
-			<!-- <div class="services-list" id="container"> -->
-				<!-- <div class="con">
-					<i class="fa-solid fa-crop-simple"></i>
-					<img class="logo" src="airtel work.png">
-					<h2>airtel work</h2>
-					<p>Airtelwork is automated work force management tool used for assigning Work orders and Tickets to Field engineers for Fault restoration</p>
-					<div class="expand-content">
-						<p>Additional information goes here...</p>
-					</div>
-					<table>
-						<tr >
-							<td><a class="netcool" href="http://sit.airtelwork.airtelworld.in/">Login</a></td>
-							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton10">Learn more</a></td>
-						</tr>
-					</table>
-				</div> -->
-				<!-- <div class="con">
-					<i class="fa-solid fa-crop-simple"></i>
-					<img class="logo" src="glimpse logo.jpg">
-					<h2>Fact</h2>
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
-					<div class="expand-content">
-						<p>Additional information goes here...</p>
-					</div>
-					<table>
-						<tr >
-							<td><a class="netcool" href="https://www.glimpse.airtel.com/" id="container">Login</a></td>
-							<td><pre>    </pre></td>
-							<td id="container"><a class="netcool" id="openModalButton3">Learn more</a></td>
-						</tr>
-					</table>
-				</div> -->
-				<!-- <div style="background-color:black;">
-					<i class="fa-brands fa-app-store-ios"></i>
-					<img class="logo" src="glimpse logo.jpg">
-					<h2>Remedy</h2>
+				
+				<div style="background-color:transparent;">
+					
+					<!-- <img class="logo" src="vision.jpg"> -->
+					<!-- <h2>Remedy</h2>
 					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde dolorum sapiente debitis, quas saepe deleniti sequi dicta in voluptatem quis!</p>
 					<div class="expand-content">
 						<p>Additional information goes here...</p>
@@ -771,9 +767,9 @@
 							<td><pre>    </pre></td>
 							<td id="container"><a class="netcool" id="openModalButton">Learn more</a></td>
 						</tr>
-					</table>
-				</div> -->
-			<!-- </div> -->
+					</table> -->
+				</div>
+			</div>
 			<a href="#" class="btn" id="container"></a>
 		</div>
 	</div>
@@ -980,7 +976,7 @@
 				</div>
 				
 				<div class="contact-right">
-					<form action="" class="myform" method="post" enctype="multipart/form-data">
+					<form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="myform" method="post" enctype="multipart/form-data">
 						<!-- <input type="text" name="name" placeholder="Your name" readonly> -->
 						<!-- <h4 class="sub-title"><pre> </pre></h4> -->
 						<!-- <br> -->
@@ -1024,17 +1020,87 @@
 			<p>Copyright <img src="copyright.jpg" class="copy"> Airtel,Powered by Airtel Digitization Team</p>
 		</div>
 	</div>
+	<?php
+    
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // echo "<meta http-equiv='refresh' content='0'>";
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $olmid = $_POST["olmid"];
+    $tool = $_POST["tool"];
+    $support = $_POST["support"];
+    $message = $_POST["message"];
+    // $uni = uniqid();
+	
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "airtel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $name = $conn->real_escape_string($name);
+    $email = $conn->real_escape_string($email);
+    $olmid = $conn->real_escape_string($olmid);
+    $tool = $conn->real_escape_string($tool);
+    $support = $conn->real_escape_string($support);
+    $message = $conn->real_escape_string($message);
+	$uni = "${olmid}"."_"."${tool}"."_"."${support}";
+	$status = "ON";
 
+
+	$prefix = "${olmid}_";
+	$randomNumber = str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT); // Generates a random number between 1 and 99999, padded with zeros to a length of 5 digits
+	$id = $prefix . $randomNumber;	
+	$useraction="NA";
+	$standardremarks="NA";
+	$latestresolution="NA";
+	$reopen="NA";
+	$reopenstandard="NA";
+	$subcategory="NA";
+	$reopencount="0";
+	$timetoresolve="0";
+	$reopenremark="NA";
+    $sql = "INSERT INTO query (Name, email, OLM, tool, support, subcategory, message,  Status, UserAction, standardremarks, latestresolution	, reopencount, reopenRemark, reopenStandard, timeToResolve,  uni, unique_id) VALUES ('$name', '$email', '$olmid', '$tool', '$support', '$subcategory', '$message', '$status','$useraction','$standardremarks','$latestresolution','$reopencount','$reopenremark','$reopenstandard','$timetoresolve', '$uni', '$id')";
+	$to = "support.glimpse@airtel.com";
+    $subject = "\r\nSubject: "."$uni"." | "."$tool"
+	." | "."$support";
+    $mailMessage = "HI Glimpse Team,".
+	"\r\nThis is regarding Reuest ID - $uni raised by $name".
+	"\r\n Details - $support".
+	"\r\nPlease look into user request and close".
+	"\r\nRegards".
+	"\r\nSupport Bot".
+	"\r\n(This is a system generated mail. Please reply back to Tool Support Team)\r\n";
+	$headers = "CC: $email";
+
+
+    if ($conn->query($sql) === TRUE) {
+        echo "done";
+		if(mail($to, $subject, $mailMessage, $headers)){
+			echo " done";
+		}
+		
+		
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+?>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
         $(document).ready(function(){
+			$requestId="";
             $('form').submit(function(event){
                 event.preventDefault();
                 $.ajax({
                     type: $(this).attr('method'),
                     data: $('form').serialize(),
                     success: function(data) {
-                        $('#result').html("Your Request has been successfully registered with Network Digitization team with Request ID –  GLI_00001. Kindly use this Request ID for further communication. Mail has also been sent to respective Digital SPOCs.");
+                        $('#result').html("Your Request has been successfully registered with Network Digitization team with Request ID – requestId. Kindly use this Request ID for further communication. Mail has also been sent to respective Digital SPOCs.");
                         $(".myform")[0].reset();
                     }
                 });
@@ -1083,7 +1149,7 @@
 
 		}
 	</script>
-	<script src="news.js"></script>
+	<!-- <script src="news.js"></script> -->
 </body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="responses.js">
